@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "IranSans";
+  src: url("../public/fonts/IranSans/eot/IRANSansWeb.eot");
+}
+
+@layer components {
+  .gradborder {
+    @apply border-solid border-b-8;
+    border-image-slice: 1;
+    border-image-source: radial-gradient(circle at center ,rgba(24, 24, 66,100) ,rgba(42,48,70,0));
+  }
+}
+

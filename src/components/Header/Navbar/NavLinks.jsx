@@ -1,4 +1,3 @@
-
 const Navlinks = ({ links }) => {
   return (
     <div className="flex justify-between gap-14">

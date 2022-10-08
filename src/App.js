@@ -1,13 +1,12 @@
-import Header from "./components/Header/Header";
-import Navbar from "./components/Header/Navbar/Navbar";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <div className="bg-black text-white font-IranSans">
-      <Navbar />
-      <Header/>
+      {/* PAGES */}
+      <HomePage />
 
-      <p className="bg-slate-800 ">.</p>
+      <p className="bg-slate-900 h-10"></p>
       <div className="h-screen"></div>
     </div>
   );

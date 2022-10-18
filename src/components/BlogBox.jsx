@@ -29,10 +29,10 @@ const posts = [
 const BlogBox = () => {
   return (
     <MainBox  bgColor={"bg-white"}>
-      <div className="text-3xl font-bold flex justify-center mb-14">
+      <div className="text-2xl lg:text-3xl font-bold flex justify-center mb-14">
         <p>اخبار روز علم نجوم در جهان</p>
       </div>
-      <div className='flex justify-around gap-5 mb-10'>
+      <div className='flex flex-col lg:flex-row justify-around gap-2 lg:gap-5 mb-5 lg:mb-10'>
         {posts.map((post) => (
           <BlogCard
             key={post.id}

@@ -6,8 +6,6 @@ function App() {
       {/* PAGES */}
       <HomePage />
 
-      <p className="bg-slate-900 h-10"></p>
-      <div className="h-screen"></div>
     </div>
   );
 }

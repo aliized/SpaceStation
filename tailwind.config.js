@@ -9,7 +9,9 @@ module.exports = {
       },
       backgroundImage: {
         headerBg: "url('/src/pics/earthBg.png')",
+        bgPlanets: "url('/src/pics/bgPlanets.png')",
         issBg: "url('/src/pics/issBg.png')",
+        bgGalaxy: "url('/src/pics/bgGalaxy.png')",
       },
       backgroundSize: { "60%": "65%" },
       borderRadius: { large: "4.5rem" },

@@ -1,14 +1,14 @@
 import book1 from "../pics/dynamic/book1.png";
 const BookBox = () => {
   return (
-    <div className="container py-20 px-40 mx-auto flex flex-col justify-center items-center gap-7 text-black ">
+    <div className="container lg:py-20 lg:px-40 mx-auto flex flex-col justify-center items-center gap-7 text-black ">
       <h4 className="text-3xl font-bold">کتاب های نجومی</h4>
-      <p className="text-2xl font-bold">
+      <p className="text-2xl font-bold text-center">
         کتاب چشم اندازی به شگفتی های نجوم(ستاره ها و سیاره ها)
       </p>
-      <div className=" flex items-center ">
-        <div className="flex w-2/3">
-          <div className="flex flex-col gap-4 font-medium text-lg px-32 leading-8 text-gray-700">
+      <div className=" flex flex-col-reverse lg:flex-row items-center ">
+        <div className="flex lg:w-2/3">
+          <div className="flex flex-col gap-4 font-medium text-lg pt-4 pb-10 px-6 lg:px-32 leading-8 text-gray-700">
             <p>
               کتاب چشم‌اندازی به شگفتی‌های نجوم (ستاره‌ها و سیاره‌ها) نوشته
               سیمون هولند از مجموعه چشم‌اندازی به شگفتی‌های جهان به معرفی دنیای
@@ -29,7 +29,7 @@ const BookBox = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/3">
+        <div className=" rounded-large lg:w-1/3">
           <img src={book1} alt="کتاب" className="h-full w-full" />
         </div>
       </div>

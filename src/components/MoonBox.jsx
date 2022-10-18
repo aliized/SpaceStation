@@ -5,9 +5,9 @@ const MoonBox = () => {
   return (
     <MainBox bgColor={"bg-black"}>
       
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-14 py-8">
+      <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 lg:py-8">
 
-        <img src={Moon} alt="" className=" h-full" />
+        <img src={Moon} alt="" className="px-2 h-full" />
         <h4 className="text-3xl font-bold">همه چیز درباره ی ماه</h4>
         <div className="leading-7 ">
           <h5 className="mb-3">پنجمین ماه بزرگ منظومه ی شمسی</h5>

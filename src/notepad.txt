@@ -1,0 +1,17 @@
+/
+/blogindex
+/moviesindex
+/bookindex
+/galleryindex
+
+/post/:id
+
+/login
+/register
+/dashboard
+
+/about-us
+/contact-us
+
+
+footer

@@ -1,10 +1,12 @@
-import HomePage from "./pages/HomePage";
+import Todo from "./components/Todo";
+import Home from "./views/web/Home";
 
 function App() {
   return (
     <div className="bg-black text-white font-IranSans">
+    <Todo/>
       {/* PAGES */}
-      <HomePage />
+      <Home />
 
     </div>
   );

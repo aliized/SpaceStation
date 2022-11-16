@@ -1,12 +1,12 @@
-import Navbar from "../components/Header/Navbar/Navbar";
-import Header from "../components/Header/Header";
-import BlogBox from "../components/BlogBox";
-import BookBox from "../components/BookBox";
-import MoonBox from "../components/MoonBox";
-import MovieBox from "../components/MovieBox";
-import GalleryBox from "../components/GalleryBox";
-import DictionaryBox from "../components/DictionaryBox";
-import Footer from "../components/Footer/Footer";
+import Navbar from "components/Header/Navbar/Navbar";
+import Header from "components/Header/Header";
+import BlogBox from "components/BlogBox";
+import BookBox from "components/BookBox";
+import MoonBox from "components/MoonBox";
+import MovieBox from "components/MovieBox";
+import GalleryBox from "components/GalleryBox";
+import DictionaryBox from "components/DictionaryBox";
+import Footer from "components/Footer/Footer";
 
 const HomePage = () => {
   return (

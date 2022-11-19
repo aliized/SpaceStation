@@ -1,6 +1,6 @@
-import MainBox from "./containers/MainBox";
+import MainBox from "components/containers/MainBox";
 
-import Dictionary from "./../pics/dynamic/Dictionary.png";
+import Dictionary from "pics/dynamic/Dictionary.png";
 const DictionaryBox = () => {
     return (   <MainBox bgColor={"bg-black"}>
       

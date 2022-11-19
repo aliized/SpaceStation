@@ -1,9 +1,9 @@
 import BlogCard from "./BlogCard";
 
-import post1 from "../pics/dynamic/post1.png";
-import post2 from "../pics/dynamic/post2.png";
-import post3 from "../pics/dynamic/post3.png";
-import MainBox from "./containers/MainBox";
+import post1 from "pics/dynamic/post1.png";
+import post2 from "pics/dynamic/post2.png";
+import post3 from "pics/dynamic/post3.png";
+import MainBox from "components/containers/MainBox";
 
 const posts = [
   {

@@ -1,18 +1,18 @@
 import Navbar from "components/Header/Navbar/Navbar";
 import Header from "components/Header/Header";
-import BlogBox from "components/BlogBox";
-import BookBox from "components/BookBox";
-import MoonBox from "components/MoonBox";
-import MovieBox from "components/MovieBox";
-import GalleryBox from "components/GalleryBox";
-import DictionaryBox from "components/DictionaryBox";
+import BlogBox from "views/web/Home/BlogBox";
+import BookBox from "views/web/Home/BookBox";
+import MoonBox from "views/web/Home/MoonBox";
+import MovieBox from "views/web/Home/MovieBox";
+import GalleryBox from "views/web/Home/GalleryBox";
+import DictionaryBox from "views/web/Home/DictionaryBox";
 import Footer from "components/Footer/Footer";
 
-const HomePage = () => {
+const Home = () => {
   return (
     <>
       <Navbar />
-     
+
       <Header />
       <BlogBox />
       <div className=" mx-auto bg-issBg  bg-no-repeat bg-cover mt-10 lg:mt-32 h-[52vw]"></div>
@@ -30,4 +30,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

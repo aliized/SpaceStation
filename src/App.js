@@ -1,13 +1,9 @@
-import Todo from "./components/Todo";
-import Home from "./views/web/Home";
+import RouteHandler from "routes";
 
 function App() {
   return (
     <div className="bg-black text-white font-IranSans">
-    <Todo/>
-      {/* PAGES */}
-      <Home />
-
+      <RouteHandler />
     </div>
   );
 }

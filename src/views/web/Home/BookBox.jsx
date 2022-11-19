@@ -1,4 +1,4 @@
-import book1 from "../pics/dynamic/book1.png";
+import book1 from "pics/dynamic/book1.png";
 const BookBox = () => {
   return (
     <div className="container lg:py-20 lg:px-40 mx-auto flex flex-col justify-center items-center gap-7 text-black ">

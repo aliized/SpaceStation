@@ -1,10 +1,10 @@
-import MainBox from "./containers/MainBox";
+import MainBox from "components/containers/MainBox";
 import MovieCard from "./MovieCard";
 
 
-import movie1 from "../pics/dynamic/movie1.png"
-import movie2 from "../pics/dynamic/movie2.jpg"
-import movie3 from "../pics/dynamic/movie3.jpg"
+import movie1 from "pics/dynamic/movie1.png"
+import movie2 from "pics/dynamic/movie2.jpg"
+import movie3 from "pics/dynamic/movie3.jpg"
 
 const MovieBox = () => {
    

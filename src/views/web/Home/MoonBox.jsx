@@ -1,5 +1,5 @@
-import MainBox from "./containers/MainBox";
-import Moon from "./../pics/dynamic/Moon1.png";
+import MainBox from "components/containers/MainBox";
+import Moon from "pics/dynamic/Moon1.png";
 
 const MoonBox = () => {
   return (

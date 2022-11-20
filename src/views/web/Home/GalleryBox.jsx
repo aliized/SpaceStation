@@ -1,4 +1,4 @@
-import MainBox from "components/containers/MainBox";
+import MainFrame from "components/containers/MainFrame";
 import GalleryCard from "./GalleryCard";
 
 import gallery1 from "pics/dynamic/gallery1.png";
@@ -22,17 +22,17 @@ const GalleryBox = () => {
   ];
 
   return (
-    <MainBox bgColor={"bg-white"}>
-    <div className="flex flex-col gap-6 lg:gap-12 items-center">
-    <div className="text-3xl font-bold flex justify-center lg:mb-7">
-        <p>عکس های نجومی</p>
-      </div>
+    <MainFrame bgColor={"bg-white"}>
+      <div className="flex flex-col gap-6 lg:gap-12 items-center">
+        <div className="text-3xl font-bold flex justify-center lg:mb-7">
+          <p>عکس های نجومی</p>
+        </div>
 
-      {gallery.map((photo) => (
-        <GalleryCard key={photo.id} title={"no-title"} photo={photo.photo} />
-      ))}
-    </div>
-    </MainBox>
+        {gallery.map((photo) => (
+          <GalleryCard key={photo.id} title={"no-title"} photo={photo.photo} />
+        ))}
+      </div>
+    </MainFrame>
   );
 };
 

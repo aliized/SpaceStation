@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { links } from "./MyLinks";
 import NavbarSublinks from "./NavbarSublinks";
 import SidebarSublinks from "./SidebarSublinks";
@@ -10,9 +11,9 @@ const NavLinks = () => {
   return (
     <>
       {links.map((link) => (
-        <div>
+        <div key={link.name}>
           <div className="px-3 md:cursor-pointer group">
-            <h1
+            <Link to="/movies"
               className="py-4 flex justify-between items-center md:pl-0 pl-5 group font-bold text-lg"
               onClick={() => {
                 heading !== link.name ? setHeading(link.name) : setHeading("");
@@ -36,7 +37,7 @@ const NavLinks = () => {
               ) : (
                 ""
               )}
-            </h1>
+            </Link>
             <NavbarSublinks
               link={link}
             />

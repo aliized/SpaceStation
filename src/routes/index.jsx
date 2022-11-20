@@ -4,6 +4,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "views/web/404";
 import Home from "views/web/Home";
+import Movies from "views/web/movies";
 
 const RouteHandler = () => {
   return (
@@ -13,7 +14,7 @@ const RouteHandler = () => {
         <Route path="" element={<Home />} />
         <Route path="blog" element={<NotCreated />} />
         <Route path="post/:postId" element={<NotCreated />} />
-        <Route path="movies" element={<NotCreated />} />
+        <Route path="movies" element={<Movies />} />
         <Route path="books" element={<NotCreated />} />
         <Route path="gallery" element={<NotCreated />} />
         

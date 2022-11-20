@@ -12,6 +12,7 @@ module.exports = {
         bgPlanets: "url('/src/pics/bgPlanets.png')",
         issBg: "url('/src/pics/issBg.png')",
         bgGalaxy: "url('/src/pics/bgGalaxy.png')",
+        bgSpaceHotel: "url('/src/pics/bgSpaceHotel.jpg')",
       },
       backgroundSize: { "60%": "65%" },
       borderRadius: { large: "4.5rem" },

@@ -3,7 +3,7 @@ import BlogCard from "./BlogCard";
 import post1 from "pics/dynamic/post1.png";
 import post2 from "pics/dynamic/post2.png";
 import post3 from "pics/dynamic/post3.png";
-import MainBox from "components/containers/MainBox";
+import MainFrame from "components/containers/MainFrame";
 
 const posts = [
   {
@@ -28,11 +28,11 @@ const posts = [
 
 const BlogBox = () => {
   return (
-    <MainBox  bgColor={"bg-white"}>
+    <MainFrame bgColor={"bg-white"}>
       <div className="text-2xl lg:text-3xl font-bold flex justify-center mb-14">
         <p>اخبار روز علم نجوم در جهان</p>
       </div>
-      <div className='flex flex-col lg:flex-row justify-around gap-2 lg:gap-5 mb-5 lg:mb-10'>
+      <div className="flex flex-col lg:flex-row justify-around gap-2 lg:gap-5 mb-5 lg:mb-10">
         {posts.map((post) => (
           <BlogCard
             key={post.id}
@@ -42,8 +42,7 @@ const BlogBox = () => {
           />
         ))}
       </div>
-    </MainBox>
-    
+    </MainFrame>
   );
 };
 

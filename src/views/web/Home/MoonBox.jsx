@@ -1,9 +1,9 @@
-import MainBox from "components/containers/MainBox";
+import MainFrame from "components/containers/MainFrame";
 import Moon from "pics/dynamic/Moon1.png";
 
 const MoonBox = () => {
   return (
-    <MainBox bgColor={"bg-black"}>
+    <MainFrame bgColor={"bg-black"}>
       
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 lg:py-8">
 
@@ -36,7 +36,7 @@ const MoonBox = () => {
         </div>
       
       </div>
-    </MainBox>
+    </MainFrame>
   );
 };
 

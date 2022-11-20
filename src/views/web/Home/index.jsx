@@ -1,4 +1,3 @@
-import Navbar from "components/Header/Navbar/Navbar";
 import Header from "components/Header/Header";
 import BlogBox from "views/web/Home/BlogBox";
 import BookBox from "views/web/Home/BookBox";
@@ -6,12 +5,10 @@ import MoonBox from "views/web/Home/MoonBox";
 import MovieBox from "views/web/Home/MovieBox";
 import GalleryBox from "views/web/Home/GalleryBox";
 import DictionaryBox from "views/web/Home/DictionaryBox";
-import Footer from "components/Footer/Footer";
 
 const Home = () => {
   return (
     <>
-      <Navbar />
 
       <Header />
       <BlogBox />
@@ -25,7 +22,7 @@ const Home = () => {
       <div className=" my-5 lg:my-20  bg-bgGalaxy bg-no-repeat bg-cover h-[45vw]"></div>
       <GalleryBox />
       <DictionaryBox />
-      <Footer />
+      
     </>
   );
 };

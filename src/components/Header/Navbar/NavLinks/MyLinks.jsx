@@ -3,11 +3,12 @@ export const links = [
   {
     name: "علم نجوم",
     submenu: true,
+    link: "/movies",
     sublinks: [
       {
         Head: "کهکشان ها",
         sublink: [
-          { name: "کهکشان ما", link: "/" },
+          { name: "کهکشان ما", link: "/movies" },
           { name: "کهکشان بچه قورباغه", link: "/" },
           { name: "کهکشان چشم سیاه", link: "/" },
           { name: "کهکشان کلاه مکزیکی", link: "/" },
@@ -38,6 +39,7 @@ export const links = [
   {
     name: "فیلم/کتاب",
     submenu: true,
+    link: "/movies",
     sublinks: [
       {
         Head: "کهکشان ها",

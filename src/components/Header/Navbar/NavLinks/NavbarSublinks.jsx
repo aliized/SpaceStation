@@ -5,7 +5,7 @@ const NavbarSublinks = ({link}) => {
   return (<>
 
     {link.submenu && (
-        <div>
+        <div >
           <div className="absolute top-16 hidden group-hover:md:block hover:md:block text-black">
             <div className="py-3">
               <div

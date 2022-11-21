@@ -1,6 +1,4 @@
 import MainFrame from "components/containers/MainFrame";
-
-import Moon from "pics/dynamic/Moon1.png";
 import { Link } from "react-router-dom";
 
 const MovieBox = ({

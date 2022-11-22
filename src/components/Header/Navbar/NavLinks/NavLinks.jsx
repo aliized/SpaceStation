@@ -8,12 +8,14 @@ const NavLinks = () => {
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
 
+  console.log(links);
   return (
     <>
+    
       {links.map((link) => (
         <div key={link.name}>
           <div className="px-3 md:cursor-pointer group">
-            <Link to="/movies"
+            <Link to={link.link}
               className="py-4 flex justify-between items-center md:pl-0 pl-5 group font-bold text-lg"
               onClick={() => {
                 heading !== link.name ? setHeading(link.name) : setHeading("");

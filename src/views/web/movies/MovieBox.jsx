@@ -1,5 +1,5 @@
+import { SERVER_URL } from "components/config";
 import MainFrame from "components/containers/MainFrame";
-import { Link } from "react-router-dom";
 
 const MovieBox = ({
   movieName,
@@ -12,12 +12,12 @@ const MovieBox = ({
 }) => {
   return (
     <MainFrame bgColor={"bg-black"}>
-      <div className="max-w-5xl px-2 sm:px-6 flex flex-col mx-auto gap-8">
-        <h4 className="text-3xl font-bold mx-auto lg:mb-3">{movieName}</h4>
+      <div className="flex flex-col max-w-5xl gap-8 px-2 mx-auto sm:px-6">
+        <h4 className="mx-auto text-3xl font-bold lg:mb-3">{movieName}</h4>
         <div className="w-full">
           <img
-            className="rounded-3xl aspect-video object-cover w-full"
-            src={`http://localhost:9000/img/movies/${photo}`}
+            className="object-cover w-full rounded-3xl aspect-video"
+            src={`${SERVER_URL}/img/movies/${photo}`}
             alt={`تصویر فیلم ${movieName}`}
           />
         </div>
@@ -28,13 +28,13 @@ const MovieBox = ({
 
           <p>{content}</p>
         </div>
-        <div className="flex justify-end w-full">
+        {/* <div className="flex justify-end w-full">
           <Link to={`/post/${movieId}`}
-            className="bg-blue-700 text-white py-2 px-5 rounded-full"
+            className="px-5 py-2 text-white bg-blue-700 rounded-full"
           >
             ادامه مطلب
           </Link>
-        </div>
+        </div> */}
       </div>
     </MainFrame>
   );

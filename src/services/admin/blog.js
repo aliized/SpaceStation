@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const SERVER_URL = "http://localhost:9000";
+import { SERVER_URL } from "components/config";
 
 //* =======Blog=======
 //  @desc   Admin Create Post

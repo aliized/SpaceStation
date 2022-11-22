@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SERVER_URL = "http://localhost:9000";
+const SERVER_URL = "http://192.168.177.208:9000";
 
 //  @desc   Weblog Home Page
 //  @route  GET /

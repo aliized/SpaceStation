@@ -3,7 +3,7 @@ export const links = [
   {
     name: "علم نجوم",
     submenu: true,
-    link: "/movies",
+    link: "/blog",
     sublinks: [
       {
         Head: "کهکشان ها",

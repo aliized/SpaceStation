@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 
 import { BlogContext } from "context/BlogContext";
 
+import "./app.css";
+
 import RouteHandler from "routes";
 import Navbar from "components/Header/Navbar";
 import Footer from "components/Footer";
@@ -14,8 +16,9 @@ import {
 
 function App() {
   //* Server Data States
-  const [movies, setMovies] = useState([]);
   const [blog, setBlog] = useState([]);
+  const [blogIndex, setBlogIndex] = useState([]);
+  const [movies, setMovies] = useState([]);
   const [books, setBooks] = useState([]);
   const [gallery, setGallery] = useState([]);
 
@@ -31,10 +34,18 @@ function App() {
         const { data: galleryData } = await getGallery();
        
         //* Set Data
-        setBlog(blogData);
+        setBlog(blogData.posts);
         setMovies(moviesData.movies);
-        setBooks(booksData);
-        setGallery(galleryData);
+        setBooks(booksData.books);
+        setGallery(galleryData.gallery);
+
+
+        const blogList = [...blogData.posts];
+        blogList.forEach((post) => {
+          post.body = post.body.split(" ").slice(0, 160).join(" ");
+        });
+        setBlogIndex(blogList);
+
 
         // setLoading(false);
       } catch (err) {
@@ -51,7 +62,7 @@ function App() {
         movies,
         books,
         gallery,
-
+        blogIndex,
         // loading,
         // setLoading,
         // setContacts,

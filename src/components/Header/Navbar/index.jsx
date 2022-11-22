@@ -9,8 +9,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="container mx-auto flex justify-between items-center h-20 text-black md:text-white">
-      <div className="text-white p-5 md:w-auto md:hidden lg:block">
+    <nav className=" h-20 bg-black md:text-white  text-black ">
+      <div className="container mx-auto flex justify-between items-center p-5" >
+      <div className="text-white md:w-auto h-7 md:hidden lg:block">
         <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
           <ion-icon name="menu"></ion-icon>
         </div>
@@ -40,6 +41,7 @@ const Navbar = () => {
       </ul>
 
       <NavButtons />
+      </div>
     </nav>
   );
 };

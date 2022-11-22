@@ -2,22 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* 
 @font-face {
   font-family: "IranSans";
-  src: url("../public/fonts/IranSans/eot/IRANSansWeb.eot");
+  src: url("./public/fonts/IranSans/eot/IRANSansWeb.eot");
   font-weight: normal;
-
-}
-
-
-
+} */
 
 @layer components {
   .gradborder {
-    @apply border-solid border-b-8;
+    @apply border-b-8 border-solid;
     border-image-slice: 1;
-    border-image-source: radial-gradient(circle at center ,rgba(36, 36, 99,100) ,rgba(24, 24, 66,100),rgba(42,48,70,0));
+    border-image-source: radial-gradient(
+      circle at center,
+      rgba(36, 36, 99, 100),
+      rgba(24, 24, 66, 100),
+      rgba(42, 48, 70, 0)
+    );
   }
+  
 }
-

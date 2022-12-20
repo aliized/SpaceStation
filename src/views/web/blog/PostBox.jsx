@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { SERVER_URL } from "components/config";
+import { SERVER_URL } from "config";
 import MainFrame from "components/containers/MainFrame";
 
 const PostBox = ({ postTitle, photo, content, postId }) => {
@@ -18,7 +18,7 @@ const PostBox = ({ postTitle, photo, content, postId }) => {
         <p className="lineWrap">  {content}...</p>
         <div className="flex justify-end w-full">
           <Link
-            to={`/post/${postId}`}
+            to={`/post/${postId}/${postTitle}`}
             className="px-5 py-2 text-white bg-blue-700 rounded-full"
           >
             ادامه مطلب

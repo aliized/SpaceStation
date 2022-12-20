@@ -6,14 +6,18 @@ import PostBox from "./PostBox";
 import Loading from "components/Loading";
 
 const Movies = () => {
-  const { blogIndex } = useContext(BlogContext);
-  console.log(blogIndex);
-  console.log(blogIndex.length);
+  const { blogIndex ,loading } = useContext(BlogContext);
+  // console.log(blogIndex);
+  // console.log(blogIndex.length);
   return (
     <>
+    <div className="w-full mx-auto bg-bgHeader2  bg-no-repeat bg-cover
+      bg-center h-[35vh] lg:h-[35vw] relative">
+          <div className="absolute bottom-0 w-full h-16 bg-gradient-to-t from-[rgba(0,0,0,1)] to-[rgba(0,0,0,0)]"></div>
+      </div>
       {/* <div className=" mx-auto bg-bgSpaceHotel  bg-no-repeat bg-cover h-[55vw]"></div> */}
-      <div className="flex flex-col gap-10 py-16">
-        {blogIndex.length ? (
+      <div className="flex flex-col gap-10 py-8">
+        {!loading && blogIndex.length ? (
           blogIndex.map((post) => (
             <PostBox
               key={post._id}

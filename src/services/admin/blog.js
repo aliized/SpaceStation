@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SERVER_URL } from "components/config";
+import { SERVER_URL } from "config";
 
 //* =======Blog=======
 //  @desc   Admin Create Post

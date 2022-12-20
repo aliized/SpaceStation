@@ -1,4 +1,4 @@
-export const links = [
+export const navLinks = [
   //* link ba sub menu
   {
     name: "علم نجوم",

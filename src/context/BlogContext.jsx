@@ -1,18 +1,20 @@
 import { createContext } from "react";
 
 export const BlogContext = createContext({
-    blog:[],
-    blogIndex:[],
+  //*Blog
+  blog: [],
+  blogIndex: [],
+  movies: [],
+  books: [],
+  gallery: [],
 
-    movies:[],
-    setMovies: () => {},
-    
-    books:[],
-    
-    gallery:[],
-})
-//   loading: false,
-//   setLoading: () => {},
+  loading: false,
+  setLoading: () => {},
+
+  //*Navbar
+  openNav: false,
+  setOpenNav: () => {},
+});
 //   setContacts: () => {},
 //   setFilteredContacts: () => {},
 //   contacts: [],

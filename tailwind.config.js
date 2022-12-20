@@ -13,10 +13,15 @@ module.exports = {
         issBg: "url('/src/pics/issBg.png')",
         bgGalaxy: "url('/src/pics/bgGalaxy.png')",
         bgSpaceHotel: "url('/src/pics/bgSpaceHotel.jpg')",
+        bgHeader1: "url('/src/pics/bgHeader1.jpg')",
+        bgHeader2: "url('/src/pics/bgHeader2.jpg')",
+        bgHeader3: "url('/src/pics/bgHeader3.jpg')",
+
       },
       backgroundSize: { "60%": "65%" },
       borderRadius: { large: "4.5rem" },
     },
-    plugins: [],
+
+    plugins: [require("@tailwindcss/line-clamp"),],
   },
 };

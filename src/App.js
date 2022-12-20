@@ -5,7 +5,7 @@ import { BlogContext } from "context/BlogContext";
 import "./app.css";
 
 import RouteHandler from "routes";
-import Navbar from "components/Header/Navbar";
+import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 import {
   getAllPosts,
@@ -22,23 +22,29 @@ function App() {
   const [books, setBooks] = useState([]);
   const [gallery, setGallery] = useState([]);
 
+  //*NavBar States
+  const [openNav, setOpenNav] = useState(false);
+  
+
+  //* Extra States
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const getData = async () => {
       try {
-        // setLoading(true);
+        setLoading(true);
 
         //* Fetch Data
         const { data: blogData } = await getAllPosts();
         const { data: moviesData } = await getMovies();
         const { data: booksData } = await getBooks();
         const { data: galleryData } = await getGallery();
-       
+
         //* Set Data
         setBlog(blogData.posts);
         setMovies(moviesData.movies);
         setBooks(booksData.books);
         setGallery(galleryData.gallery);
-
 
         const blogList = [...blogData.posts];
         blogList.forEach((post) => {
@@ -46,11 +52,10 @@ function App() {
         });
         setBlogIndex(blogList);
 
-
-        // setLoading(false);
+        setLoading(false);
       } catch (err) {
         console.log(err.message);
-        // setLoading(false);
+        setLoading(false);
       }
     };
     getData();
@@ -63,8 +68,14 @@ function App() {
         books,
         gallery,
         blogIndex,
-        // loading,
-        // setLoading,
+
+        loading,
+        setLoading,
+
+
+        openNav,
+        setOpenNav,
+      
         // setContacts,
         // setFilteredContacts,
         // contacts,
@@ -76,10 +87,10 @@ function App() {
       }}
     >
       <div className="bg-black text-white font-IranSans min-h-[100vh] flex flex-col justify-between">
-        <div>
+        
           <Navbar />
           <RouteHandler />
-        </div>
+        
         <Footer />
       </div>
     </BlogContext.Provider>

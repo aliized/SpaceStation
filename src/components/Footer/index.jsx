@@ -10,9 +10,12 @@ const Footer = () => {
       <footer className="bg-gray-900">
         <NewsLetter />
 
-        <div className="container mx-auto flex flex-row justify-between py-12 gap-8 border-t border-gray-700 flex-wrap">
-          <div className="flex  flex-col gap-6 max-w-[25%]">
-            <p className="text-2xl py-3 border-solid border-b-2">صفحات مهم</p>
+        <div className="container flex-col mx-auto flex px-6 lg:flex-row justify-between py-12 gap-14 lg:gap-8 border-t border-gray-700 flex-wrap">
+
+
+
+          <div className="flex flex-col gap-6">
+            <p className="text-2xl py-3 border-solid border-gray-600 border-b-2">صفحات مهم</p>
             <div className="flex flex-col gap-4">
               <Link to="/blog">وبلاگ خبری</Link>
               <Link to="/movies">فیلم های فضایی</Link>
@@ -21,8 +24,11 @@ const Footer = () => {
               <Link to="/about">درباره ما</Link>
             </div>
           </div>
+
+
+
           <div className="flex  flex-col gap-6">
-            <p className="text-2xl py-3 border-solid border-b-2">
+            <p className="text-2xl py-3 border-solid border-gray-600  border-b-2">
               مطالب پربازید
             </p>
             <div className="flex flex-col gap-4">
@@ -40,8 +46,12 @@ const Footer = () => {
               </Link>
             </div>
           </div>
+
+
+
+
           <div className="flex  flex-col gap-6">
-            <p className="text-2xl py-3 border-solid border-b-2">
+            <p className="text-2xl py-3 border-solid border-gray-600  border-b-2">
               ارتباط با ما
             </p>
             <div className="flex flex-col gap-4">
@@ -52,14 +62,14 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="max-w-sm flex flex-col gap-6">
+          <div className="max-w-sm flex flex-col gap-6 items-center">
             <Link to="/">
               <img src={logo} alt="ایستگاه فضایی" className="object-contain" />
             </Link>
-            <div className="flex flex-col gap-5 pr-3">
+            <div className="flex flex-col gap-5 md:pr-3 items-center">
               <p className="text-lg">ایستگاه فضایی در شبکه های اجتماعی:</p>
 
-              <div className="text-3xl flex gap-4">
+              <div className="text-3xl flex  gap-4">
                 <Link to="/">
                   <ion-icon name="logo-twitter"></ion-icon>
                 </Link>

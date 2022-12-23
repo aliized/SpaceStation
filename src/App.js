@@ -7,6 +7,7 @@ import "./app.css";
 import RouteHandler from "routes";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
+import RegisterLogin from "components/LoginModal";
 import {
   getAllPosts,
   getBooks,
@@ -28,6 +29,11 @@ function App() {
 
   //* Extra States
   const [loading, setLoading] = useState(false);
+const [openLogin, setOpenLogin] = useState(false);
+
+
+
+
 
   useEffect(() => {
     const getData = async () => {
@@ -75,6 +81,9 @@ function App() {
 
         openNav,
         setOpenNav,
+
+        openLogin,
+        setOpenLogin,
       
         // setContacts,
         // setFilteredContacts,
@@ -86,13 +95,17 @@ function App() {
         // contactSearch,
       }}
     >
-      <div className="bg-black text-white font-IranSans min-h-[100vh] flex flex-col justify-between">
+    <div className="relative font-IranSans">
+
+      <div className="bg-black text-white  min-h-[100vh] flex flex-col justify-between">
         
           <Navbar />
           <RouteHandler />
         
         <Footer />
       </div>
+      <RegisterLogin/>
+    </div>
     </BlogContext.Provider>
   );
 }

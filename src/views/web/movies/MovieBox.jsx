@@ -37,7 +37,7 @@ const MovieBox = ({
           </div>
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 leading-loose">
           <p>{content}</p>
         </div>
         {/* <div className="flex justify-end w-full">

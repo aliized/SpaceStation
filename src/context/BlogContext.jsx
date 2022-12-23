@@ -14,6 +14,10 @@ export const BlogContext = createContext({
   //*Navbar
   openNav: false,
   setOpenNav: () => {},
+ 
+  //*Navbar
+  openLogin: false,
+  setOpenLogin: () => {},
 });
 //   setContacts: () => {},
 //   setFilteredContacts: () => {},

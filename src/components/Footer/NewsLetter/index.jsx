@@ -2,7 +2,7 @@ import NewsLetterPic from "pics/NewsLetterxx.webp";
 
 const NewsLetter = () => {
   return (
-    <div className="flex flex-col-reverse items-center md:flex-row gap-12 container mx-auto justify-between py-12 px-4 border-spacing-8  max-w-5xl">
+    <div className="flex flex-col-reverse items-center md:flex-row gap-12 container mx-auto justify-between py-12 px-5 border-spacing-8  max-w-5xl">
       <div className="flex flex-col justify-center gap-9">
         <div className="flex gap-3">
           {/* <span className="text-7xl">

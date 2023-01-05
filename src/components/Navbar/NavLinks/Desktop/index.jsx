@@ -24,7 +24,7 @@ const DesktopLinks = () => {
               )}
             </Link>
 
-            {heading.submenu ? <DesktopSubMenu sublinks={heading.sublinks} /> : ""}
+            {heading.submenu ? <DesktopSubMenu sublinks={heading.sublinks} key={heading.id}/> : ""}
           </div>
         </div>
       ))}

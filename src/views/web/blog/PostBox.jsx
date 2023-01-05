@@ -15,7 +15,10 @@ const PostBox = ({ postTitle, photo, content, postId }) => {
             alt={`تصویر فیلم ${postTitle}`}
           />
         </div>
-        <p className="lineWrap">  {content}...</p>
+        <p className="line-clamp-3 text-justify lg:line-clamp-5">
+          {" "}
+          {content}...
+        </p>
         <div className="flex justify-end w-full">
           <Link
             to={`/post/${postId}/${postTitle}`}

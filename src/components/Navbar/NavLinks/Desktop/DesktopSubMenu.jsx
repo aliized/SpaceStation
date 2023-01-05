@@ -16,11 +16,11 @@ const DesktopSubMenu = ({ sublinks }) => {
         <div className="bg-white p-5 grid grid-cols-3 gap-10 shadow-lg rounded-md">
 
           {sublinks.map((subHeading) => (
-            <div>
+            <div key={subHeading.id}>
               <h5 className="text-lg font-semibold">{subHeading.Head}</h5>
 
               {subHeading.sublink.map((slink) => (
-                <li className="text-sm text-gray-600 my-2.5">
+                <li className="text-sm text-gray-600 my-2.5" key={slink.id}>
                   <Link to={slink.link}>
                     {slink.name}
                   </Link>

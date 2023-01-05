@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 
 import { BlogContext } from "context/BlogContext";
 
-import "./app.css";
-
 import RouteHandler from "routes";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";

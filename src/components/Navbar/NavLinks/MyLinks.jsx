@@ -1,35 +1,35 @@
 export const navLinks = [
   //* link ba sub menu
-  {
+  { id:0,
     name: "علم نجوم",
     submenu: true,
     link: "/blog",
     sublinks: [
       {
-        Head: "کهکشان ها",
+        id:40,Head: "کهکشان ها",
         sublink: [
-          { name: "کهکشان ما", link: "/movies" },
-          { name: "کهکشان بچه قورباغه", link: "/" },
-          { name: "کهکشان چشم سیاه", link: "/" },
-          { name: "کهکشان کلاه مکزیکی", link: "/" },
-          { name: "کهکشان گرداب", link: "/" },
+          { id:1, name: "کهکشان ما", link: "/movies" },
+          { id:2, name: "کهکشان بچه قورباغه", link: "/" },
+          { id:3, name: "کهکشان چشم سیاه", link: "/" },
+          { id:4, name: "کهکشان کلاه مکزیکی", link: "/" },
+          { id:5, name: "کهکشان گرداب", link: "/" },
         ],
       },
       {
-        Head: "منظومه ی شمسی",
+        id:41,Head: "منظومه ی شمسی",
         sublink: [
-          { name: "زمین", link: "/" },
-          { name: "مشتری", link: "/" },
-          { name: "مریخ", link: "/" },
-          { name: "زحل", link: "/" },
-          { name: "عطارد", link: "/" },
+          { id:6, name: "زمین", link: "/" },
+          { id:7, name: "مشتری", link: "/" },
+          { id:8, name: "مریخ", link: "/" },
+          { id:9, name: "زحل", link: "/" },
+          { id:10, name: "عطارد", link: "/" },
         ],
       },
       {
-        Head: "باقی موارد",
+        id:42,Head: "باقی موارد",
         sublink: [
-          { name: "رصد آسمان شب", link: "/" },
-          { name: "سیاره ها", link: "/" },
+          { id:11, name: "رصد آسمان شب", link: "/" },
+          { id:12, name: "سیاره ها", link: "/" },
         ],
       },
     ],
@@ -37,68 +37,68 @@ export const navLinks = [
 
   //* link bedune  sub menu
   {
-    name: "فیلم/کتاب",
+    id:13, name: "فیلم/کتاب",
     submenu: true,
     link: "/movies",
     sublinks: [
       {
-        Head: "کهکشان ها",
+        id:43,Head: "کهکشان ها",
         sublink: [
-          { name: "کهکشان ما", link: "/" },
-          { name: "کهکشان بچه قورباغه", link: "/" },
-          { name: "کهکشان چشم سیاه", link: "/" },
-          { name: "کهکشان کلاه مکزیکی", link: "/" },
-          { name: "کهکشان گرداب", link: "/" },
+          { id:14, name: "کهکشان ما", link: "/" },
+          { id:15, name: "کهکشان بچه قورباغه", link: "/" },
+          { id:16, name: "کهکشان چشم سیاه", link: "/" },
+          { id:17, name: "کهکشان کلاه مکزیکی", link: "/" },
+          { id:18, name: "کهکشان گرداب", link: "/" },
         ],
       },
       {
-        Head: "منظومه ی شمسی",
+        id:44,Head: "منظومه ی شمسی",
         sublink: [
-          { name: "زمین", link: "/" },
-          { name: "مشتری", link: "/" },
-          { name: "مریخ", link: "/" },
-          { name: "زحل", link: "/" },
-          { name: "عطارد", link: "/" },
+          { id:19, name: "زمین", link: "/" },
+          { id:20, name: "مشتری", link: "/" },
+          { id:21, name: "مریخ", link: "/" },
+          { id:22, name: "زحل", link: "/" },
+          { id:23, name: "عطارد", link: "/" },
         ],
       },
       {
-        Head: "کهکشان ها",
+        id:45,Head: "کهکشان ها",
         sublink: [
-          { name: "کهکشان ما", link: "/" },
-          { name: "کهکشان بچه قورباغه", link: "/" },
-          { name: "کهکشان چشم سیاه", link: "/" },
-          { name: "کهکشان کلاه مکزیکی", link: "/" },
-          { name: "کهکشان گرداب", link: "/" },
+          { id:24, name: "کهکشان ما", link: "/" },
+          { id:25, name: "کهکشان بچه قورباغه", link: "/" },
+          { id:26, name: "کهکشان چشم سیاه", link: "/" },
+          { id:27, name: "کهکشان کلاه مکزیکی", link: "/" },
+          { id:28, name: "کهکشان گرداب", link: "/" },
         ],
       },
       {
-        Head: "منظومه ی شمسی",
+        id:46,Head: "منظومه ی شمسی",
         sublink: [
-          { name: "زمین", link: "/" },
-          { name: "مشتری", link: "/" },
-          { name: "مریخ", link: "/" },
-          { name: "زحل", link: "/" },
-          { name: "عطارد", link: "/" },
+          { id:29, name: "زمین", link: "/" },
+          { id:30, name: "مشتری", link: "/" },
+          { id:31, name: "مریخ", link: "/" },
+          { id:32, name: "زحل", link: "/" },
+          { id:33, name: "عطارد", link: "/" },
         ],
       },
       {
-        Head: "باقی موارد",
+        id:48,Head: "باقی موارد",
         sublink: [
-          { name: "رصد آسمان شب", link: "/" },
-          { name: "سیاره ها", link: "/" },
+          { id:34, name: "رصد آسمان شب", link: "/" },
+          { id:35, name: "سیاره ها", link: "/" },
         ],
       },
       {
-        Head: "باقی موارد",
+        id:49,Head: "باقی موارد",
         sublink: [
-          { name: "رصد آسمان شب", link: "/" },
-          { name: "سیاره ها", link: "/" },
+          { id:36, name: "رصد آسمان شب", link: "/" },
+          { id:37, name: "سیاره ها", link: "/" },
         ],
       },
     ],
   },
-  { name: "گالری عکس", submenu: false, sublinks: [] },
-  { name: "اخبار", submenu: false ,sublinks: []},
+  { id:38, name: "گالری عکس", submenu: false, sublinks: [] },
+  { id:39, name: "اخبار", submenu: false ,sublinks: []},
 ];
 
 // export const links = [

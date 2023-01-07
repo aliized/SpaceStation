@@ -1,4 +1,4 @@
-import AboutUsPic from "pics/AboutUs.webp";
+import AboutUsPic from "assets/images/AboutUs.webp";
 
 const AboutUs = () => {
   return (

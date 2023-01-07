@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "IranSans";
+  src: url("./assets/fonts/IranSans/woff2/IRANSansWeb_UltraLight.woff2")
+      format("woff2"),
+    url("./assets/fonts/IranSans/woff/IRANSansWeb_UltraLight.woff")
+      format("woff"),
+    url("./assets/fonts/IranSans/ttf/IRANSansWeb_UltraLight.ttf")
+      format("truetype"),
+    url("./assets/fonts/IranSans/eot/IRANSansWeb_UltraLight.eot");
+  font-weight: 100;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: "IranSans";
+  src: url("./assets/fonts/IranSans/woff2/IRANSansWeb_Light.woff2")
+      format("woff2"),
+    url("./assets/fonts/IranSans/woff/IRANSansWeb_Light.woff") format("woff"),
+    url("./assets/fonts/IranSans/ttf/IRANSansWeb_Light.ttf") format("truetype"),
+    url("./assets/fonts/IranSans/eot/IRANSansWeb_Light.eot");
+  font-weight: 200 300;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: "IranSans";
+  src: url("./assets/fonts/IranSans/woff2/IRANSansWeb.woff2") format("woff2"),
+    url("./assets/fonts/IranSans/woff/IRANSansWeb.woff") format("woff"),
+    url("./assets/fonts/IranSans/ttf/IRANSansWeb.ttf") format("truetype"),
+    url("./assets/fonts/IranSans/eot/IRANSansWeb.eot");
+  font-weight: 400;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: "IranSans";
+  src: url("./assets/fonts/IranSans/woff2/IRANSansWeb_Medium.woff2")
+      format("woff2"),
+    url("./assets/fonts/IranSans/woff/IRANSansWeb_Medium.woff") format("woff"),
+    url("./assets/fonts/IranSans/ttf/IRANSansWeb_Medium.ttf") format("truetype"),
+    url("./assets/fonts/IranSans/eot/IRANSansWeb_Medium.eot");
+  font-weight: 500 600;
+  font-display: swap;
+
+}
+
+@font-face {
+  font-family: "IranSans";
+  src: url("./assets/fonts/IranSans/woff2/IRANSansWeb_Bold.woff2")
+      format("woff2"),
+    url("./assets/fonts/IranSans/woff/IRANSansWeb_Bold.woff") format("woff"),
+    url("./assets/fonts/IranSans/ttf/IRANSansWeb_Bold.ttf") format("truetype"),
+    url("./assets/fonts/IranSans/eot/IRANSansWeb_Bold.eot");
+  font-weight: 700 900;
+  font-display: swap;
+
+}
+
+.gradborder {
+  @apply border-b-8 border-solid;
+  border-image-slice: 1;
+  border-image-source: radial-gradient(
+    circle at center,
+    rgba(36, 36, 99, 100),
+    rgba(24, 24, 66, 100),
+    rgba(42, 48, 70, 0)
+  );
+}
+
+
+
+

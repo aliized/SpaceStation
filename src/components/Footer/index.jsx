@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import NewsLetter from "./NewsLetter";
 
-import logo from "pics/LogoTextColored.webp";
+import logo from "assets/images/LogoTextColored.webp";
 
 const Footer = () => {
   return (

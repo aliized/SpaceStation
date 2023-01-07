@@ -1,9 +1,9 @@
 import MainFrame from "components/containers/MainFrame";
 import MovieCard from "./MovieCard";
 
-import movie1 from "pics/dynamic/movie1.png";
-import movie2 from "pics/dynamic/movie2.jpg";
-import movie3 from "pics/dynamic/movie3.jpg";
+import movie1 from "assets/images/dynamic/movie1.webp";
+import movie2 from "assets/images/dynamic/movie2.webp";
+import movie3 from "assets/images/dynamic/movie3.webp";
 
 const MovieBox = () => {
   const movies = [

@@ -1,10 +1,10 @@
 import MainFrame from "components/containers/MainFrame";
-import Moon from "pics/dynamic/Moon1.png";
+import Moon from "assets/images/dynamic/Moon1.webp";
 
 const MoonBox = () => {
   return (
     <MainFrame bgColor={"bg-black"}>
-      
+
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 lg:py-8">
 
         <img src={Moon} alt="" className="px-2 h-full" />
@@ -34,7 +34,7 @@ const MoonBox = () => {
         <div className="flex justify-end w-full">
           <a href="link" className="bg-blue-700 text-white py-2 px-5 rounded-full">ادامه مطلب</a>
         </div>
-      
+
       </div>
     </MainFrame>
   );

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import logo from "pics/LogoTextColored.webp";
+import logo from "assets/images/LogoTextColored.webp";
 
 const NavLogo = () => {
   return (

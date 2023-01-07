@@ -24,13 +24,13 @@ const MobileLinks = () => {
       </div>
 
       {navLinks.map((heading) => (
-        <div key={heading.name}>
+        <div key={heading.id}>
           <div className="px-3 md:cursor-pointer group">
             <p
-              className="flex items-center justify-between py-4 pl-5 text-lg font-bold md:pl-0 group"
+              className="flex items-center justify-between py-4 pl-5 text-lg font-bold md:pl-0 group hover:cursor-pointer"
               onClick={() => {
-                selectedHeading !== heading.name
-                  ? setSelectedHeading(heading.name)
+                selectedHeading !== heading.id
+                  ? setSelectedHeading(heading.id)
                   : setSelectedHeading("");
                 setSelectedSubHeading("");
               }}
@@ -42,7 +42,7 @@ const MobileLinks = () => {
                 <span className="inline text-xl md:hidden">
                   <ion-icon
                     name={`${
-                      selectedHeading === heading.name
+                      selectedHeading === heading.id
                         ? "chevron-up"
                         : "chevron-down"
                     }`}
@@ -53,7 +53,7 @@ const MobileLinks = () => {
               )}
             </p>
           </div>
-          {heading.submenu && selectedHeading === heading.name ? (
+          {heading.submenu && selectedHeading === heading.id ? (
             <MobileSubMenu
               selectedSubHeading={selectedSubHeading}
               setSelectedSubHeading={setSelectedSubHeading}

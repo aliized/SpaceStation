@@ -1,4 +1,4 @@
-import NotFoundPic from "pics/NotFound.webp";
+import NotFoundPic from "assets/images/NotFound.webp";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {

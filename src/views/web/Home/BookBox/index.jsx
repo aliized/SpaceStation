@@ -1,4 +1,4 @@
-import book1 from "pics/dynamic/book1.png";
+import book1 from "assets/images/dynamic/book1.webp";
 const BookBox = () => {
   return (
     <div className="container lg:py-20 lg:px-40 mx-auto flex flex-col justify-center items-center gap-7 text-black ">
@@ -24,7 +24,7 @@ const BookBox = () => {
               به کودکان کمک کند بتوانند دنیای اطراف خود را بهتر درک و کشف کنند.
             </p>
             <div className="flex justify-end">
-            <a href="link" className="bg-blue-700 text-white py-2 px-5 rounded-full"> کتاب های بیشتر</a>
+              <a href="link" className="bg-blue-700 text-white py-2 px-5 rounded-full"> کتاب های بیشتر</a>
 
             </div>
           </div>

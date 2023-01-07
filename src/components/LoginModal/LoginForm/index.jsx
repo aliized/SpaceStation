@@ -1,49 +1,88 @@
-import { BlogContext } from "context/BlogContext";
 import { useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
+
+import { BlogContext } from "context/BlogContext";
+import { login } from "services/web/user";
+
+import FormInput from "../FormInput";
 
 const LoginForm = ({ setRegisterForm }) => {
-  const { openLogin } = useContext(BlogContext);
+  const { setOpenLogin, openLogin } = useContext(BlogContext);
 
-  const [mail, setMail] = useState("");
-  const [mailFocused, setMailFocused] = useState(false);
-  const [mailBorder, setMailBorder] = useState("w-0");
-
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passBorder, setPassBorder] = useState("");
-  const [passFocused, setPassFocused] = useState(false);
-  const [passShow, setPassShow] = useState(false);
 
   useEffect(() => {
     if (!openLogin) {
-      setMail("");
-      setMailFocused(false);
-      setMailBorder("w-0");
+      setEmail("");
       setPassword("");
-
-      setPassBorder("w-0");
-      setPassFocused(false);
-      setPassShow(false);
     }
   }, [openLogin]);
 
-  useEffect(() => {
-    if (passFocused || password) {
-      setPassBorder("w-full");
-    } else {
-      setPassBorder("w-0");
-    }
-  }, [passFocused, password]);
+  //* submit handler
+  const handleSubmit = async (e) => {
+    let loadingToast = toast.loading("لطفا چند لحظه صبر کن");
+    e.preventDefault();
+    try {
+      let res;
 
-  useEffect(() => {
-    if (mailFocused || mail) {
-      setMailBorder("w-full");
-    } else {
-      setMailBorder("w-0");
-    }
-  }, [mail, mailFocused]);
+      const user = { email, password };
 
-  const handleSubmit = () => {
-    console.log(password, mail);
+      if (email && password) {
+        res = await login(user);
+      } else {
+        res = "";
+
+        toast.error("خطا", {
+          id: loadingToast,
+          duration: 4000,
+        });
+        return;
+      }
+
+      switch (res.status) {
+        case 200:
+          toast.success("با موفقیت وارد حساب کاربریت شدی", {
+            id: loadingToast,
+            duration: 4000,
+          });
+          // login
+          // set token
+          console.log(res.data);
+
+          setOpenLogin(false);
+          break;
+
+        default:
+          toast.error("یه خطایی از طرف سرور پیش اومده :(", {
+            id: loadingToast,
+            duration: 4000,
+          });
+
+          break;
+      }
+    } catch (err) {
+      if (
+        err.response &&
+        err.response.status >= 400 &&
+        err.response.status < 500
+      ) {
+        toast.error("یه خطایی پیش اومده :(", {
+          id: loadingToast,
+          duration: 3000,
+        });
+        //  خطایی که انتطارشو داریم
+        // ino mishe bebarim tu api
+      } else {
+        toast.error(" خطایی از سمت سرور پیش اومده :(", {
+          id: loadingToast,
+          duration: 3000,
+        });
+        //   خطایی از سمت سرور
+      }
+
+      console.log(err);
+    }
   };
 
   return (
@@ -53,95 +92,26 @@ const LoginForm = ({ setRegisterForm }) => {
       </div>
 
       <form
-        action="login"
-        onSubmit={(e) => e.preventDefault()}
+        onSubmit={handleSubmit}
         className="flex flex-col gap-10  mx-auto py-8 sm:w-72"
       >
-        <div>
-          <label htmlFor="email">آدرس ایمیل</label>
-          <div
-            dir="ltr"
-            className="pr-1 flex relative items-center border-b-2 border-gray-300 h-10"
-          >
-            <div className="text-xl pt-1 px-1  justify-center text-gray-500">
-              <ion-icon name="person"></ion-icon>
-            </div>
-
-            <input
-              dir="ltr"
-              type="email"
-              name="userMail"
-              placeholder="example@gmail.com"
-              className=" leading-tight focus:outline-none bg-none w-full px-1 "
-              onChange={(e) => {
-                setMail(e.target.value);
-              }}
-              value={mail}
-              onFocus={() => {
-                setMailFocused(true);
-              }}
-              onBlur={() => {
-                setMailFocused(false);
-              }}
-            />
-            <div
-              className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[2px] absolute -bottom-[2px]  duration-300 ${mailBorder}`}
-            ></div>
-          </div>
-        </div>
-
-        <div>
-          <label htmlFor="password" className="opacity-100">
-            کلمه عبور
-          </label>
-
-          <div
-            dir="ltr"
-            className=" flex items-center relative h-12 border-b-2 border-gray-300"
-          >
-            <div className="text-xl pt-1 px-1 text-gray-500 ">
-              <ion-icon name="lock-closed"></ion-icon>{" "}
-            </div>
-
-            <input
-              type={!passShow ? "password" : "text"}
-              name="password"
-              placeholder="********"
-              className="leading-tight focus-visible:outline-none bg-none w-full "
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              value={password}
-              onFocus={() => {
-                setPassFocused(true);
-              }}
-              onBlur={() => {
-                setPassFocused(false);
-              }}
-            />
-
-            <button
-              onClick={() => setPassShow(!passShow)}
-              className="hover:text-gray-700 text-xl flex justify-center items-center text-gray-300 px-1"
-            >
-              {passShow ? (
-                <ion-icon name="eye-off"></ion-icon>
-              ) : (
-                <ion-icon name="eye"></ion-icon>
-              )}
-            </button>
-
-            <div
-              className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[2px] absolute -bottom-[2px]  duration-300 ${passBorder}`}
-            ></div>
-          </div>
-        </div>
+        <FormInput
+          label="آدرس ایمیل"
+          state={email}
+          setState={setEmail}
+          type="email"
+        />
+        <FormInput
+          label="کلمه عبور"
+          state={password}
+          setState={setPassword}
+          type="password"
+        />
 
         <input
           className="px-5 py-2 text-white bg-blue-700 rounded-full duration-75 cursor-pointer hover:bg-blue-800"
           type="submit"
           value="ورود"
-          onClick={handleSubmit}
         />
       </form>
       <p className="text-sm text-center pb-10">

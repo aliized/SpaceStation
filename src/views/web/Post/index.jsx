@@ -55,7 +55,7 @@ const SinglePost = () => {
             <p> {post.body}</p>
             <div className="flex flex-col w-full justify-center items-center border-solid border-t-2 border-b-2 p-4 gap-4">
               <p>COMMENT SECTION</p>
-              <form action="s" method="post">
+              <form method="post">
                 <input
                   type="text-area"
                   name="comment"

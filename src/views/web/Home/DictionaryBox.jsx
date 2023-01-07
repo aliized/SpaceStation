@@ -1,6 +1,6 @@
 import MainFrame from "components/containers/MainFrame";
 
-import Dictionary from "pics/dynamic/Dictionary.png";
+import Dictionary from "assets/images/dynamic/Dictionary.webp";
 const DictionaryBox = () => {
   return (
     <MainFrame bgColor={"bg-black"}>

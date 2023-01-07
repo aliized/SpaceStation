@@ -16,18 +16,18 @@ const MobileSubMenu = ({
           <div>
             <h
               onClick={() =>
-                selectedSubHeading !== slinks.Head
-                  ? setSelectedSubHeading(slinks.Head)
+                selectedSubHeading !== slinks.id
+                  ? setSelectedSubHeading(slinks.id)
                   : setSelectedSubHeading("")
               }
-              className="py-4 pr-7 font-semibold pl-5 md:pl-0  flex justify-between items-center"
+              className="py-4 pr-7 font-semibold pl-5 md:pl-0 hover:cursor-pointer flex justify-between items-center"
             >
               {slinks.Head}
 
               <span className="text-xl md:mt-1 md:ml-2 inline">
                 <ion-icon
                   name={`${
-                    selectedSubHeading === slinks.Head
+                    selectedSubHeading === slinks.id
                       ? "chevron-up"
                       : "chevron-down"
                   }`}
@@ -36,7 +36,7 @@ const MobileSubMenu = ({
             </h>
             <div
               className={`${
-                selectedSubHeading === slinks.Head ? "" : "hidden"
+                selectedSubHeading === slinks.id ? "" : "hidden"
               } bg-gray-200 rounded-lg py-2`}
             >
               {slinks.sublink.map((slink) => (

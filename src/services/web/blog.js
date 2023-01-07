@@ -1,10 +1,5 @@
-import axios from "axios";
 import api from "./api";
 
-//?const responseGraficoRetirada = await api.get('/get/graficoRetiradaMensal');
-//?        const response = await api.get('/posts/show');
-
-import { SERVER_URL } from "config";
 
 //  @desc   Weblog Home Page
 //  @route  GET /
@@ -22,17 +17,13 @@ export const getAllPosts = () => {
 //  @route  GET /movies
 export const getMovies = () => {
   return api.get("/movies");
-  // const url = `${SERVER_URL}/movies`;
-  // return axios.get(url);
+  
 };
 
 //  @desc   Get All Books
 //  @route  GET /books
 export const getBooks = () => {
   return api.get("/books");
-
-  // const url = `${SERVER_URL}/books`;
-  // return axios.get(url);
 };
 
 //  @desc   Get All Photoes
@@ -47,17 +38,13 @@ export const getGallery = () => {
 //  @desc   Get Single post With postId
 //  @route  GET /post/:id
 export const getPost = (postId) => {
-  const url = `${SERVER_URL}/post/${postId}`;
-  return axios.get(url);
+  return api.get(`/post/${postId}`);
 };
 
 //  @desc   Add Post Comment
 //  @route  POST /post/add-comment
 export const createComment = (comment) => {
   return api.post("/post/add-comment",comment);
-
-  // const url = `${SERVER_URL}/post/add-comment`;
-  // return axios.post(url, comment);
 };
 
 //  @desc   Edit Post Comment

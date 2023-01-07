@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Toaster } from "react-hot-toast";
 
 import { BlogContext } from "context/BlogContext";
 
@@ -23,15 +24,10 @@ function App() {
 
   //*NavBar States
   const [openNav, setOpenNav] = useState(false);
-  
 
   //* Extra States
   const [loading, setLoading] = useState(false);
-const [openLogin, setOpenLogin] = useState(false);
-
-
-
-
+  const [openLogin, setOpenLogin] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -76,34 +72,28 @@ const [openLogin, setOpenLogin] = useState(false);
         loading,
         setLoading,
 
-
         openNav,
         setOpenNav,
 
         openLogin,
         setOpenLogin,
-      
-        // setContacts,
-        // setFilteredContacts,
-        // contacts,
-        // filteredContacts,
-        // groups,
-        // deleteContact: confirmDelete,
-        // createContact: createContactForm,
-        // contactSearch,
       }}
     >
-    <div className="relative font-IranSans">
+      <div className="relative font-IranSans">
+        <Toaster
+          toastOptions={{
+            className: "font-IranSans bg-white",
+          }}
+        />
 
-      <div className="bg-black text-white  min-h-[100vh] flex flex-col justify-between">
-        
+        <div className="bg-black text-white  min-h-[100vh] flex flex-col justify-between">
           <Navbar />
           <RouteHandler />
-        
-        <Footer />
+
+          <Footer />
+        </div>
+        <RegisterLogin />
       </div>
-      <RegisterLogin/>
-    </div>
     </BlogContext.Provider>
   );
 }

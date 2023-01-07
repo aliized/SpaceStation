@@ -1,9 +1,9 @@
 import MainFrame from "components/containers/MainFrame";
 import GalleryCard from "./GalleryCard";
 
-import gallery1 from "pics/dynamic/gallery1.png";
-import gallery2 from "pics/dynamic/gallery2.png";
-import gallery3 from "pics/dynamic/gallery3.png";
+import gallery1 from "assets/images/dynamic/gallery1.webp";
+import gallery2 from "assets/images/dynamic/gallery2.webp";
+import gallery3 from "assets/images/dynamic/gallery3.webp";
 
 const GalleryBox = () => {
   const gallery = [

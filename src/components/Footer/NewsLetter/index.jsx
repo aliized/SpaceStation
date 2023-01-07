@@ -1,4 +1,4 @@
-import NewsLetterPic from "pics/NewsLetterxx.webp";
+import NewsLetterPic from "assets/images/NewsLetterxx.webp";
 
 const NewsLetter = () => {
   return (
@@ -18,7 +18,7 @@ const NewsLetter = () => {
               عضو خبرناممون شو تا هر روز برات جدیدترین اخبار و اطلاعات رو ایمیل
               کنیم.
             </p>
-            <form action="send" className="flex gap-3 flex-wrap">
+            <form className="flex gap-3 flex-wrap">
               
 
               <input

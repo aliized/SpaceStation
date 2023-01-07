@@ -1,8 +1,8 @@
 import BlogCard from "./BlogCard";
 
-import post1 from "pics/dynamic/post1.png";
-import post2 from "pics/dynamic/post2.png";
-import post3 from "pics/dynamic/post3.png";
+import post1 from "assets/images/dynamic/post1.webp";
+import post2 from "assets/images/dynamic/post2.webp";
+import post3 from "assets/images/dynamic/post3.webp";
 import MainFrame from "components/containers/MainFrame";
 
 const posts = [

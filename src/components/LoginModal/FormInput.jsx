@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import { IoLockClosed,IoPerson} from "react-icons/io5";
 
-const FormInput = ({ label = "بدون نام", state, setState, type = "text" }) => {
+import { IoEye, IoEyeOff, IoLockClosed, IoPerson } from "react-icons/io5";
+
+const FormInput = ({
+  label = "بدون نام",
+  state,
+  setState,
+  type = "text",
+  placeHolder = "",
+  name,
+}) => {
   const [passShow, setPassShow] = useState(true);
   const [icon, setIcon] = useState("");
 
@@ -10,17 +17,16 @@ const FormInput = ({ label = "بدون نام", state, setState, type = "text" }
     switch (type) {
       case "password":
         setPassShow(false);
-        setIcon(<IoLockClosed/>)
+        setIcon(<IoLockClosed />);
         break;
       case "email":
-        setIcon(<IoPerson/>)
+        setIcon(<IoPerson />);
         break;
-    
+
       default:
-        setIcon(<IoPerson/>)
+        setIcon(<IoPerson />);
         break;
     }
-    
   }, [type]);
 
   return (
@@ -33,15 +39,12 @@ const FormInput = ({ label = "بدون نام", state, setState, type = "text" }
         dir="ltr"
         className=" flex items-center relative h-12 border-b-2 border-gray-300"
       >
-        <div className="text-xl pb-2 px-1 text-gray-500 ">
-        {icon}
-        </div>
-
+        <div className="text-xl pb-2 px-1 text-gray-500 ">{icon}</div>
 
         <input
           type={!passShow ? "password" : "text"}
-          name="password"
-          placeholder="********"
+          name={name}
+          placeholder={placeHolder}
           className="leading-tight focus-visible:outline-none bg-none w-full peer"
           onChange={(e) => {
             setState(e.target.value);
@@ -51,10 +54,11 @@ const FormInput = ({ label = "بدون نام", state, setState, type = "text" }
 
         {type === "password" ? (
           <button
+            type="button"
             onClick={() => setPassShow(!passShow)}
             className="hover:text-gray-700 text-xl flex justify-center items-center text-gray-300 px-1"
           >
-            {passShow ? <IoMdEyeOff className="text-gray-600" /> : <IoMdEye />}
+            {passShow ? <IoEyeOff className="text-gray-600" /> : <IoEye />}
           </button>
         ) : (
           ""

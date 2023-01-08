@@ -39,6 +39,13 @@ const RegisterForm = ({ setRegisterForm }) => {
     }
   };
 
+
+
+
+
+
+  
+
   return (
     <div>
       <div className="font-bold text-2xl">
@@ -54,18 +61,28 @@ const RegisterForm = ({ setRegisterForm }) => {
           state={email}
           setState={setEmail}
           type="email"
+          placeHolder="example@gmail.com"
+          name="email"
         />
         <FormInput
           label="کلمه عبور"
           state={password}
           setState={setPassword}
           type="password"
+          placeHolder="********"
+          name="password"
+
+
         />
         <FormInput
           label="تکرار کلمه عبور"
           state={confirmPassword}
           setState={setConfirmPassword}
           type="password"
+          placeHolder="********"
+          name="confirmPassword"
+
+
         />
 
         <input

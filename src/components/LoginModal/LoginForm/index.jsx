@@ -33,33 +33,30 @@ const LoginForm = ({ setRegisterForm }) => {
       } else {
         res = "";
 
-        toast.error("خطا", {
+        toast.error("لطفا موارد خواسته شده را تکمیل کنید", {
           id: loadingToast,
           duration: 4000,
         });
         return;
       }
 
-      switch (res.status) {
-        case 200:
-          toast.success("با موفقیت وارد حساب کاربریت شدی", {
-            id: loadingToast,
-            duration: 4000,
-          });
-          // login
-          // set token
-          console.log(res.data);
+      if (res.status === 200) {
 
-          setOpenLogin(false);
-          break;
 
-        default:
-          toast.error("یه خطایی از طرف سرور پیش اومده :(", {
-            id: loadingToast,
-            duration: 4000,
-          });
+        toast.success("با موفقیت وارد حساب کاربریت شدی", {
+          id: loadingToast,
+          duration: 4000,
+        });
+        // login
+localStorage.setItem("token",res.data.token)        
+console.log(res.data);
 
-          break;
+        setOpenLogin(false);
+
+
+
+
+
       }
     } catch (err) {
       if (
@@ -100,12 +97,16 @@ const LoginForm = ({ setRegisterForm }) => {
           state={email}
           setState={setEmail}
           type="email"
+          placeHolder="example@gmail.com"
+          name="email"
         />
         <FormInput
           label="کلمه عبور"
           state={password}
           setState={setPassword}
           type="password"
+          placeHolder="********"
+          name="password"
         />
 
         <input

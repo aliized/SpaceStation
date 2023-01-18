@@ -8,7 +8,7 @@ const MoonBox = () => {
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 lg:py-8">
 
         <img src={Moon} alt="" className="px-2 h-full" />
-        <h4 className="text-3xl font-bold">همه چیز درباره ی ماه</h4>
+        <h4 className="text-4xl font-bold font-anjoman">همه چیز درباره ی ماه</h4>
         <div className="leading-7 ">
           <h5 className="mb-3">پنجمین ماه بزرگ منظومه ی شمسی</h5>
           <p>

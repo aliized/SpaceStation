@@ -1,6 +1,5 @@
 import api from "./api";
 
-
 //  @desc   Weblog Home Page
 //  @route  GET /
 //! Home Page
@@ -17,7 +16,6 @@ export const getAllPosts = () => {
 //  @route  GET /movies
 export const getMovies = () => {
   return api.get("/movies");
-  
 };
 
 //  @desc   Get All Books
@@ -43,8 +41,10 @@ export const getPost = (postId) => {
 
 //  @desc   Add Post Comment
 //  @route  POST /post/add-comment
-export const createComment = (comment) => {
-  return api.post("/post/add-comment",comment);
+export const createComment = (token,comment) => {
+  return api.post("/post/add-comment", comment, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
 };
 
 //  @desc   Edit Post Comment

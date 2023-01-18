@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-
+import { Field, ErrorMessage } from "formik";
 import { IoEye, IoEyeOff, IoLockClosed, IoPerson } from "react-icons/io5";
 
 const FormInput = ({
   label = "بدون نام",
-  state,
-  setState,
   type = "text",
   placeHolder = "",
   name,
+  error,
+  touched,
 }) => {
   const [passShow, setPassShow] = useState(true);
   const [icon, setIcon] = useState("");
@@ -41,15 +41,16 @@ const FormInput = ({
       >
         <div className="text-xl pb-2 px-1 text-gray-500 ">{icon}</div>
 
-        <input
+        <Field
+          id={name}
           type={!passShow ? "password" : "text"}
           name={name}
           placeholder={placeHolder}
           className="leading-tight focus-visible:outline-none bg-none w-full peer"
-          onChange={(e) => {
-            setState(e.target.value);
-          }}
-          value={state}
+          // onChange={(e) => {
+          //   setState(e.target.value);
+          // }}
+          // value={state}
         />
 
         {type === "password" ? (
@@ -65,11 +66,20 @@ const FormInput = ({
         )}
 
         <div
-          className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-[2px] absolute -bottom-[2px]  duration-300  peer-focus:w-full ${
-            state ? "w-full" : "w-0"
+          className={` h-[2px] absolute -bottom-[2px]  duration-300  peer-focus:w-full 
+          ${touched ? "w-full" : "w-0"} 
+          ${
+            error
+              ? "bg-red-600"
+              : "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
           }
          `}
         ></div>
+      </div>
+      <div className="text-red-600 text-sm px-2 py-1 h-7 w-full">
+        {error ? (
+          <ErrorMessage name={name} render={(msg) => <p>{msg}</p>} />
+        ) : null}
       </div>
     </div>
   );

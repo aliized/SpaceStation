@@ -8,20 +8,20 @@ import MainFrame from "components/containers/MainFrame";
 const posts = [
   {
     id: 1,
-    title: "آغاز ساخت اولین هتل فضایی جهان در سال 2025",
+    title: " ساخت اولین هتل فضایی جهان",
     text: "ناسا تصمیم دارد ماهواره هایی که هم اکنون در فضا قرار دارند را تغییر کاربری دهد ",
     photo: post1,
   },
   {
     id: 2,
-    title: "آغاز ساخت اولین هتل فضایی جهان در سال 2025",
+    title: "آغاز ساخت  هتل فضایی  در سال 2025",
     text: "ناسا تصمیم دارد ماهواره هایی که هم اکنون در فضا قرار دارند را تغییر کاربری دهد ",
     photo: post2,
   },
   {
     id: 3,
-    title: "آغاز ساخت اولین هتل فضایی جهان در سال 2025",
-    text: "ناسا تصمیم دارد ماهواره هایی که هم اکنون در فضا قرار دارند را تغییر کاربری دهد ",
+    title: "آغاز ساخت فضایی جهان در سال 2025",
+    text: "ناسا تصمیم دارد ماهواره هایی که هم اکنون در فضا قرار دارند را تغییر کاربری دهد ناسا تصمیم دارد ماهواره هایی که هم اکنون در فضا قرار دارند را تغییر کاربری دهد ",
     photo: post3,
   },
 ];
@@ -29,10 +29,10 @@ const posts = [
 const BlogBox = () => {
   return (
     <MainFrame bgColor={"bg-white"}>
-      <div className="text-2xl lg:text-3xl font-bold flex justify-center mb-14">
+      <div className="text-3xl lg:text-4xl font-bold font-anjoman flex justify-center mb-14">
         <p>اخبار روز علم نجوم در جهان</p>
       </div>
-      <div className="flex flex-col lg:flex-row justify-around gap-2 lg:gap-5 mb-5 lg:mb-10">
+      <div className="flex flex-col lg:flex-row justify-around gap-2 lg:gap-5 mb-5 lg:mb-10 lg:flex-wrap">
         {posts.map((post) => (
           <BlogCard
             key={post.id}

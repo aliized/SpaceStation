@@ -25,7 +25,7 @@ const MovieBox = ({
           </div>
 
           <div className="flex flex-col gap-2">
-            <h4 className="py-2 mb-2 text-xl font-bold">فیلم {movieName}</h4>
+            <h4 className="py-2 mb-2 text-2xl font-bold font-anjoman">فیلم {movieName}</h4>
             <p>امتیاز: 8.4</p>
             <p>زبان: انگلیسی</p>
             <p>ژانر: علمی تخیلی، درام، </p>

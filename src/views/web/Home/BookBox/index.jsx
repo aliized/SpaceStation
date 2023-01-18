@@ -1,14 +1,20 @@
 import book1 from "assets/images/dynamic/book1.webp";
 const BookBox = () => {
   return (
-    <div className="container lg:py-20 lg:px-40 mx-auto flex flex-col justify-center items-center gap-7 text-black ">
-      <h4 className="text-3xl font-bold">کتاب های نجومی</h4>
+    <div className="container lg:py-20 max-w-7xl px-5 mx-auto flex flex-col justify-center items-center gap-7 text-black ">
+      <h4 className="text-3xl font-bold md:text-4xl font-anjoman">کتاب های نجومی</h4>
       <p className="text-2xl font-bold text-center">
         کتاب چشم اندازی به شگفتی های نجوم(ستاره ها و سیاره ها)
       </p>
+
+
+
+
+
       <div className=" flex flex-col-reverse lg:flex-row items-center ">
-        <div className="flex lg:w-2/3">
-          <div className="flex flex-col gap-4 font-medium text-lg pt-4 pb-10 px-6 lg:px-32 leading-8 text-gray-700">
+
+        
+          <div className="flex-1 flex flex-col gap-4 font-medium text-lg py-4 lg:px-8 leading-8 text-gray-700">
             <p>
               کتاب چشم‌اندازی به شگفتی‌های نجوم (ستاره‌ها و سیاره‌ها) نوشته
               سیمون هولند از مجموعه چشم‌اندازی به شگفتی‌های جهان به معرفی دنیای
@@ -28,9 +34,11 @@ const BookBox = () => {
 
             </div>
           </div>
-        </div>
-        <div className=" rounded-large lg:w-1/3">
-          <img src={book1} alt="کتاب" className="h-full w-full" />
+
+
+
+        <div className="flex-1 rounded-large w-2/3 sm:w-1/2 max-w-sm mx-7">
+          <img src={book1} alt="کتاب" className="aspect-3/4 mx-auto w-full" />
         </div>
       </div>
     </div>

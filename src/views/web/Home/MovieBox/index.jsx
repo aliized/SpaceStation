@@ -38,7 +38,7 @@ const MovieBox = () => {
 
   return (
     <MainFrame bgColor={"bg-white"}>
-      <div className="text-3xl font-bold flex justify-center mb-14">
+      <div className="text-3xl md:text-4xl font-anjoman font-bold flex justify-center mb-14">
         <p>فیلم های نجومی</p>
       </div>
       <div className="flex flex-col items-center gap-12 ">

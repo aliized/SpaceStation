@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         IranSans: ["IranSans", "sans-serif"],
+        vazir:["Vazirmatn"],
+        anjoman:["AnjomanMax"],
       },
       backgroundImage: {
         headerBg: "url('/src/assets/images/earthBg.webp')",

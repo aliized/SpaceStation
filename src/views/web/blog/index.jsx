@@ -5,7 +5,7 @@ import { BlogContext } from "context/BlogContext";
 import PostBox from "./PostBox";
 import Loading from "components/Loading";
 
-const Movies = () => {
+const Blog = () => {
   const { blogIndex ,loading } = useContext(BlogContext);
   // console.log(blogIndex);
   // console.log(blogIndex.length);
@@ -35,4 +35,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default Blog;

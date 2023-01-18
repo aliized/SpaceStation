@@ -1,106 +1,80 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
+import { Formik, Form } from "formik";
 
 import { BlogContext } from "context/BlogContext";
-import { createUser } from "services/web/user";
+import { registerSchema } from "validators/userSchema";
 
 import FormInput from "../FormInput";
 
-const RegisterForm = ({ setRegisterForm }) => {
-  const { setOpenLogin, openLogin } = useContext(BlogContext);
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  //*reset after close
-  useEffect(() => {
-    if (!openLogin) {
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
-    }
-  }, [openLogin]);
-
-  //* submit handler
-  const handleSubmit = async (e, username = email) => {
-    try {
-      e.preventDefault();
-
-      const user = { email, password, confirmPassword, username };
-
-      const { data, status } = await createUser(user);
-      if (status === 201) {
-        console.log(data);
-        // login
-        setOpenLogin(false);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-
-
-
-
-
-  
+const RegisterForm = () => {
+  const { handleRegister, setModalForm } = useContext(BlogContext);
 
   return (
-    <div>
-      <div className="font-bold text-2xl">
-        <p className="py-12 text-center">ساخت حساب کاربری</p>
+    <>
+      <div className="font-bold  font-anjoman text-2xl sm:text-3xl">
+        <p className="py-10 text-center">ساخت حساب کاربری</p>
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-10  mx-auto py-8 sm:w-72"
+      <Formik
+        initialValues={{
+          email: "",
+          password: "",
+          confirmPassword: "",
+        }}
+        validationSchema={registerSchema}
+        onSubmit={(values) => {
+          handleRegister(values);
+        }}
       >
-        <FormInput
-          label="آدرس ایمیل"
-          state={email}
-          setState={setEmail}
-          type="email"
-          placeHolder="example@gmail.com"
-          name="email"
-        />
-        <FormInput
-          label="کلمه عبور"
-          state={password}
-          setState={setPassword}
-          type="password"
-          placeHolder="********"
-          name="password"
+        {({ errors, touched }) => (
+          <Form className="flex flex-col gap-3 p-8 sm:mx-auto">
+            <FormInput
+              label="آدرس ایمیل"
+              type="email"
+              placeHolder="example@gmail.com"
+              name="email"
+              error={errors.email}
+              touched={touched.email}
+            />
 
+            <FormInput
+              label="کلمه عبور"
+              type="password"
+              placeHolder="********"
+              name="password"
+              error={errors.password}
+              touched={touched.password}
+            />
 
-        />
-        <FormInput
-          label="تکرار کلمه عبور"
-          state={confirmPassword}
-          setState={setConfirmPassword}
-          type="password"
-          placeHolder="********"
-          name="confirmPassword"
+            <FormInput
+              label="تکرار کلمه عبور"
+              type="password"
+              placeHolder="********"
+              name="confirmPassword"
+              error={errors.confirmPassword}
+              touched={touched.confirmPassword}
+            />
 
+            <input
+              className="px-5 py-2 mt-2 text-white bg-blue-700 rounded-full duration-75 cursor-pointer hover:bg-blue-800"
+              type="submit"
+              value="ثبت نام"
+            />
+          </Form>
+        )}
+      </Formik>
 
-        />
-
-        <input
-          className="px-5 py-2 text-white bg-blue-700 rounded-full duration-75 cursor-pointer hover:bg-blue-800"
-          type="submit"
-          value="ثبت نام"
-        />
-      </form>
       <p className="text-sm text-center pb-10">
         میخوای وارد شی؟{" "}
         <button
-          onClick={() => setRegisterForm(false)}
+          type="button"
+          onClick={() => setModalForm("login")}
           className=" text-blue-500"
         >
           ورود{" "}
         </button>
       </p>
-    </div>
+    </>
   );
 };
 

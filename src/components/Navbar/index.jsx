@@ -6,6 +6,8 @@ import NavLogo from "./Logo";
 import DesktopLinks from "./NavLinks/Desktop";
 import MobileLinks from "./NavLinks/Mobile";
 
+import { IoMenuOutline } from "react-icons/io5";
+
 const Navbar = () => {
   const { openNav, setOpenNav } = useContext(BlogContext);
 
@@ -14,10 +16,10 @@ const Navbar = () => {
       <div className="container flex items-center justify-between py-2 px-4 mx-auto  h-16">
         
         <div
-          className="text-3xl text-white lg:hidden"
+          className="text-3xl text-white lg:hidden flex"
           onClick={() => setOpenNav(!openNav)}
         >
-          <ion-icon name="menu"></ion-icon>
+          <IoMenuOutline/>
         </div>
 
         <NavLogo />

@@ -1,4 +1,5 @@
 import NotFoundPic from "assets/images/NotFound.webp";
+import { IoChevronForwardOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
@@ -18,7 +19,7 @@ const NotFound = () => {
           className="flex items-center text-blue-400"
         >
           صفحه ی اصلی
-          <ion-icon name="chevron-forward-outline"></ion-icon>
+          <IoChevronForwardOutline/>
         </Link>
       
       

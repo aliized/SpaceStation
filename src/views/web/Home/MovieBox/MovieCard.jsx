@@ -6,7 +6,7 @@ const MovieCard = ({ name, director, writers, actors, releaseDate, photo }) => {
           <img src={photo} alt={name} className="w-full h-full object-cover "  />
         </div>
         <div className=" flex flex-col gap-2 lg:w-[24rem] px-4">
-          <h3 className="text-2xl font-bold text-blue-700"> فیلم {name}</h3>
+          <h3 className="text-2xl font-anjoman font-bold text-blue-700"> فیلم {name}</h3>
           <p className="font-bold text-gray-700">کارگردان: {director}</p>
           <p className="font-bold text-gray-700">نویسندگان: {writers}</p>
           <p className="font-bold text-gray-700">بازیگران: {actors}</p>

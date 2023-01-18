@@ -97,13 +97,8 @@ export const navLinks = [
       },
     ],
   },
-  { id:38, name: "گالری عکس", submenu: false, sublinks: [] },
-  { id:39, name: "اخبار", submenu: false ,sublinks: []},
+    
+    { id:38, name: "گالری عکس",link: "/gallery"
+  , submenu: false, sublinks: [] },
+  { id:39, name: "اخبار",link: "/blog", submenu: false ,sublinks: []},
 ];
-
-// export const links = [
-//   { name: "فیلم/کتاب", submenu: false },
-//     { name: "گالری عکس", submenu: false },
-//      { name: "اخبار", submenu: false },
-
-// ];

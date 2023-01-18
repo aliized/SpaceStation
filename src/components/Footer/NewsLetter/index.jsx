@@ -5,22 +5,17 @@ const NewsLetter = () => {
     <div className="flex flex-col-reverse items-center md:flex-row gap-12 container mx-auto justify-between py-12 px-5 border-spacing-8  max-w-5xl">
       <div className="flex flex-col justify-center gap-9">
         <div className="flex gap-3">
-          {/* <span className="text-7xl">
-          <ion-icon name="mail-outline"></ion-icon>
-        </span> */}
-
           <div className="flex flex-col gap-4 sm:gap-6 pt-3 ">
-            <p className="text-xl lg:text-3xl font-bold ">
+            <div className="text-2xl font-bold font-anjoman ">
               {" "}
-              اولین کسی باش که از اخبار نجوم و فضا باخبر میشه
-            </p>
+              <p> اولین کسی باش </p>
+              <p className=" text-3xl md:text-4xl"> که از اخبار نجوم و فضا باخبر میشه</p>
+            </div>
             <p>
               عضو خبرناممون شو تا هر روز برات جدیدترین اخبار و اطلاعات رو ایمیل
               کنیم.
             </p>
             <form className="flex gap-3 flex-wrap">
-              
-
               <input
                 type="email"
                 dir="ltr"

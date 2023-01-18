@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 import { BlogContext } from "context/BlogContext";
 
-import RouteHandler from "routes";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 import RegisterLogin from "components/LoginModal";
@@ -13,6 +12,12 @@ import {
   getGallery,
   getMovies,
 } from "services/web/blog";
+import ScrollToTop from "components/Scrollers/ScrollToTop";
+import { authApi, loginApi, registerApi } from "services/web/user";
+
+import { useRoutes } from "react-router-dom";
+import routes from "routes";
+import { SERVER_URL } from "config";
 
 function App() {
   //* Server Data States
@@ -27,7 +32,133 @@ function App() {
 
   //* Extra States
   const [loading, setLoading] = useState(false);
-  const [openLogin, setOpenLogin] = useState(false);
+
+  //* User States
+  const [openModal, setOpenModal] = useState(false);
+  const [modalForm, setModalForm] = useState("login");
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [token, setToken] = useState(null);
+  const [user, setUser] = useState({});
+
+  const router = useRoutes(routes);
+
+  const loginDataSet = (userInfo, userToken) => {
+    //* user info
+    setUser(userInfo);
+    setLoggedIn(true);
+
+    //* user token
+    localStorage.setItem("user", userToken);
+    setToken(userToken);
+
+    //  localStorage.setItem("user", JSON.stringify({ userToken }));
+  };
+
+  const logoutDataSet = () => {
+    setToken(null);
+    setUser({});
+    setLoggedIn(false);
+    localStorage.removeItem("user");
+  };
+
+  const handleRegister = async (user) => {
+    let loadingToast = toast.loading("لطفا چند لحظه صبر کن");
+    try {
+      //*sakhte objecte user
+      user.fullName = user.email.substring(0, user.email.indexOf("@"));
+
+      //*ertebat ba backend vase sakht
+      const res = await registerApi(user);
+
+      if (res.status !== 201) {
+        toast.error("مشکلی در ساخت کاربر به وجود آمده!", {
+          id: loadingToast,
+          duration: 4000,
+        });
+      }
+      toast.success(`سلام ${user.fullName} عزیز، خوش آمدی!`, {
+        id: loadingToast,
+        duration: 4000,
+      });
+
+      //*set token + states
+      const { user: userInfo, token: userToken } = res.data;
+      loginDataSet(userInfo, userToken);
+
+      setOpenModal(false);
+    } catch (err) {
+      if (err.response) {
+        toast.error(err.response.data.message, {
+          id: loadingToast,
+          duration: 3000,
+        });
+      } else {
+        toast.dismiss(loadingToast);
+      }
+    }
+  };
+
+  const handleLogin = async (user) => {
+    let loadingToast = toast.loading("لطفا چند لحظه صبر کن");
+    try {
+      const res = await loginApi(user);
+      if (res.status !== 200) {
+        toast.error("مشکلی در ورود به حساب کاربری به وجود آمده!", {
+          id: loadingToast,
+          duration: 4000,
+        });
+      }
+
+      toast.success("با موفقیت وارد حساب کاربریت شدی", {
+        id: loadingToast,
+        duration: 4000,
+      });
+
+      //*set token + states
+      const { user: userInfo, token: userToken } = res.data;
+      loginDataSet(userInfo, userToken);
+
+      setOpenModal(false);
+    } catch (err) {
+      if (err.response) {
+        if (err.response.status === 404) {
+          toast.error("قبلا ثبت نام نکردی؟ لطفا ثبت نام کن", {
+            id: loadingToast,
+            duration: 3000,
+          });
+          setModalForm("register");
+        } else {
+          toast.error(err.response.data.message, {
+            id: loadingToast,
+            duration: 3000,
+          });
+        }
+      } else {
+        toast.dismiss(loadingToast);
+      }
+    }
+  };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const userToken = localStorage.getItem("user");
+
+        if (!userToken) {
+          return logoutDataSet();
+        }
+        const res = await authApi(userToken);
+        if (res.status !== 200) {
+          return logoutDataSet();
+        }
+
+        const { user: userInfo } = res.data;
+        loginDataSet(userInfo, userToken);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
 
   useEffect(() => {
     const getData = async () => {
@@ -39,12 +170,15 @@ function App() {
         const { data: moviesData } = await getMovies();
         const { data: booksData } = await getBooks();
         const { data: galleryData } = await getGallery();
-
+        const galleryArray = galleryData.gallery
+        galleryArray.forEach((frame)=>{
+          frame.src=`${SERVER_URL}/img/gallery/${frame.photo}`
+        })
         //* Set Data
         setBlog(blogData.posts);
         setMovies(moviesData.movies);
         setBooks(booksData.books);
-        setGallery(galleryData.gallery);
+        setGallery(galleryArray);
 
         const blogList = [...blogData.posts];
         blogList.forEach((post) => {
@@ -75,24 +209,34 @@ function App() {
         openNav,
         setOpenNav,
 
-        openLogin,
-        setOpenLogin,
+        openModal,
+        setOpenModal,
+        modalForm,
+        setModalForm,
+
+        handleRegister,
+        handleLogin,
+        logout: logoutDataSet,
+
+        loggedIn,
+        token,
+        user,
       }}
     >
-      <div className="relative font-IranSans">
+      <div className="relative font-vazir">
         <Toaster
           toastOptions={{
-            className: "font-IranSans bg-white",
+            className: "font-vazir bg-white",
           }}
         />
+        <ScrollToTop />
 
         <div className="bg-black text-white  min-h-[100vh] flex flex-col justify-between">
           <Navbar />
-          <RouteHandler />
-
+          {router}
           <Footer />
         </div>
-        <RegisterLogin />
+        {openModal ? <RegisterLogin /> : null}
       </div>
     </BlogContext.Provider>
   );

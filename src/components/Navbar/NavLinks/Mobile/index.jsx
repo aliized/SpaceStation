@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import MobileSubMenu from "./MobileSubMenu";
 
 import { navLinks } from "../MyLinks";
+import { IoChevronDown, IoClose } from "react-icons/io5";
 
 const MobileLinks = () => {
   const { openNav, setOpenNav } = useContext(BlogContext);
@@ -19,7 +20,7 @@ const MobileLinks = () => {
     >
       <div className="px-1 py-5 text-black w-auto">
         <div className="text-3xl" onClick={() => setOpenNav(!openNav)}>
-          <ion-icon name="close"></ion-icon>
+          <IoClose />
         </div>
       </div>
 
@@ -35,18 +36,21 @@ const MobileLinks = () => {
                 setSelectedSubHeading("");
               }}
             >
-            {!heading.submenu?(<Link to={heading.link} onClick={() => setOpenNav(false)}>{heading.name}</Link>):heading.name}
-              
+              {!heading.submenu ? (
+                <Link to={heading.link} onClick={() => setOpenNav(false)}>
+                  {heading.name}
+                </Link>
+              ) : (
+                heading.name
+              )}
 
               {heading.submenu ? (
-                <span className="inline text-xl md:hidden">
-                  <ion-icon
-                    name={`${
-                      selectedHeading === heading.id
-                        ? "chevron-up"
-                        : "chevron-down"
-                    }`}
-                  ></ion-icon>
+                <span
+                  className={`text-xl inline duration-200 ${
+                    selectedHeading === heading.id ? "rotate-180" : null
+                  }`}
+                >
+                  <IoChevronDown />
                 </span>
               ) : (
                 ""

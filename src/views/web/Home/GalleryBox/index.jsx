@@ -24,7 +24,7 @@ const GalleryBox = () => {
   return (
     <MainFrame bgColor={"bg-white"}>
       <div className="flex flex-col gap-6 lg:gap-12 items-center">
-        <div className="text-3xl font-bold flex justify-center lg:mb-7">
+        <div className="text-3xl md:text-4xl font-bold font-anjoman flex justify-center lg:mb-7">
           <p>عکس های نجومی</p>
         </div>
 

@@ -14,10 +14,19 @@ export const BlogContext = createContext({
   //*Navbar
   openNav: false,
   setOpenNav: () => {},
- 
-  //*Navbar
-  openLogin: false,
-  setOpenLogin: () => {},
+
+  //*user
+  handleRegister: () => {},
+  handleLogin: () => {},
+  logout: () => {},
+  openModal: false,
+  setOpenModal: () => {},
+  modalForm: "",
+  setModalForm: () => {},
+  loggedIn: false,
+  token: null,
+  userInfo: null,
+
 });
 //   setContacts: () => {},
 //   setFilteredContacts: () => {},

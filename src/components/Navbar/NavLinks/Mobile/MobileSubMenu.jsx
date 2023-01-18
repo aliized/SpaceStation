@@ -1,5 +1,6 @@
 import { BlogContext } from "context/BlogContext";
 import { useContext } from "react";
+import { IoChevronDown } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const MobileSubMenu = ({
@@ -7,7 +8,7 @@ const MobileSubMenu = ({
   setSelectedSubHeading,
   sublinks,
 }) => {
-  const {setOpenNav } = useContext(BlogContext);
+  const { setOpenNav } = useContext(BlogContext);
 
   return (
     <div className=" bg-gray-100 rounded-lg ">
@@ -24,14 +25,12 @@ const MobileSubMenu = ({
             >
               {slinks.Head}
 
-              <span className="text-xl md:mt-1 md:ml-2 inline">
-                <ion-icon
-                  name={`${
-                    selectedSubHeading === slinks.id
-                      ? "chevron-up"
-                      : "chevron-down"
-                  }`}
-                ></ion-icon>
+              <span
+                className={`text-xl md:mt-1 md:ml-2 inline duration-100 ${
+                  selectedSubHeading === slinks.id ? "rotate-180" : null
+                }`}
+              >
+                <IoChevronDown />
               </span>
             </h>
             <div

@@ -1,3 +1,4 @@
+import { IoChevronDown } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { navLinks } from "../MyLinks";
 
@@ -8,20 +9,21 @@ const DesktopLinks = () => {
     <ul className="items-center hidden lg:flex gap-14">
       {navLinks.map((heading) => (
         <div key={heading.name}>
-          <div className="px-3 cursor-pointer group">
+          <div className="px-3 group">
             <Link
               to={heading.link}
-              className="flex items-center justify-between py-4 text-lg font-bold group"
+              className="flex items-center justify-between py-4 text-lg group"
             >
               {heading.name}
               
               {heading.submenu ? (
-                <span className="text-xl px-1 flex items-center group-hover:rotate-180">
-                  <ion-icon name="chevron-down"></ion-icon>
+                <span className="text-xl px-1 flex items-center duration-100 group-hover:rotate-180">
+                  
+                  <IoChevronDown/>
                 </span>
-              ) : (
-                ""
-              )}
+                
+
+              ) : null}
             </Link>
 
             {heading.submenu ? <DesktopSubMenu sublinks={heading.sublinks} key={heading.id}/> : ""}

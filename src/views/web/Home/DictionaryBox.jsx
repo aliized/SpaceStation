@@ -6,7 +6,7 @@ const DictionaryBox = () => {
     <MainFrame bgColor={"bg-black"}>
       <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 py-8">
         <img src={Dictionary} alt="" className=" h-full" />
-        <h4 className="text-3xl font-bold"> تلسکوپ و آسمان شب</h4>
+        <h4 className="text-4xl font-bold font-anjoman"> تلسکوپ و آسمان شب</h4>
         <div className="leading-7 ">
           <p>
             تلِسکوپ (به انگلیسی: Telescope) یا دوربین فضایی یا فرابین، وسیله‌ای

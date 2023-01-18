@@ -1,17 +1,21 @@
 import api from "./api";
 
-
-//  @desc   Register 
+//  @desc   Register
 //  @route  POST /users/register
-export const createUser = (data) => {
-    return api.post("/users/register",data);
-  };
+export const registerApi = (data) => {
+  return api.post("/users/register", data);
+};
 
-
-
-
-//  @desc   Login 
+//  @desc   Login
 //  @route  POST /users/login
-export const login = (data) => {
-    return api.post("/users/login",data);
-  };
+export const loginApi = (data) => {
+  return api.post("/users/login", data);
+};
+
+//  @desc   authCheck
+//  @route  POST /users/auth
+export const authApi = (token, data = {}) => {
+  return api.post("/users/auth", data, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};

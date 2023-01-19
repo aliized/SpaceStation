@@ -12,9 +12,11 @@ import CommentBox from "./CommentBox";
 const SinglePost = () => {
   const navigate = useNavigate();
 
+  
   const [post, setPost] = useState({});
 
   const { postId } = useParams();
+  // console.log(postId);
   const { setLoading, loading } = useContext(BlogContext);
 
   useEffect(() => {
@@ -53,9 +55,8 @@ const SinglePost = () => {
               />
             </div>
             <p> {post.body}</p>
-            <div className="flex flex-col w-full justify-center items-center border-solid border-t-2 border-b-2 p-4 gap-4">
-              <p>COMMENT SECTION</p>
-              <CommentBox/>
+            <div className="border-solid border-t-2 p-4 gap-4">
+              <CommentBox postId={postId}/>
             </div>
           </div>
         </MainFrame>

@@ -45,6 +45,7 @@ function App() {
   const loginDataSet = (userInfo, userToken) => {
     //* user info
     setUser(userInfo);
+    
     setLoggedIn(true);
 
     //* user token
@@ -140,10 +141,11 @@ function App() {
   };
 
   useEffect(() => {
+    //? auth check
     (async () => {
       try {
         const userToken = localStorage.getItem("user");
-
+        
         if (!userToken) {
           return logoutDataSet();
         }
@@ -152,7 +154,7 @@ function App() {
           return logoutDataSet();
         }
 
-        const { user: userInfo } = res.data;
+        const userInfo = res.data;
         loginDataSet(userInfo, userToken);
       } catch (err) {
         console.log(err);
@@ -161,7 +163,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const getData = async () => {
+    (async () => {
       try {
         setLoading(true);
 
@@ -170,10 +172,10 @@ function App() {
         const { data: moviesData } = await getMovies();
         const { data: booksData } = await getBooks();
         const { data: galleryData } = await getGallery();
-        const galleryArray = galleryData.gallery
-        galleryArray.forEach((frame)=>{
-          frame.src=`${SERVER_URL}/img/gallery/${frame.photo}`
-        })
+        const galleryArray = galleryData.gallery;
+        galleryArray.forEach((frame) => {
+          frame.src = `${SERVER_URL}/img/gallery/${frame.photo}`;
+        });
         //* Set Data
         setBlog(blogData.posts);
         setMovies(moviesData.movies);
@@ -191,8 +193,7 @@ function App() {
         console.log(err.message);
         setLoading(false);
       }
-    };
-    getData();
+    })();
   }, []);
   return (
     <BlogContext.Provider

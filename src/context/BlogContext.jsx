@@ -25,7 +25,7 @@ export const BlogContext = createContext({
   setModalForm: () => {},
   loggedIn: false,
   token: null,
-  userInfo: null,
+  user: {},
 
 });
 //   setContacts: () => {},

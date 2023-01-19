@@ -26,11 +26,13 @@ const GalleryLightBox = ({ setImageIndex, imageIndex, setOpen, isOpen }) => {
           className="bg-black backdrop-blur-sm bg-opacity-60 rtl"
           /* Add your own UI */
           renderHeader={() => (
-            <div className="flex justify-start text-5xl p-4">
+            <div
+              className="flex justify-start text-5xl p-4 "
+              onClick={() => setOpen(false)}
+            >
               <button
                 type="button"
                 className=" drop-shadow-[1px_1px_5px_rgba(0,0,0,0.7)] z-10 text-gray-400"
-                onClick={() => setOpen(false)}
               >
                 <IoClose />
               </button>
@@ -77,9 +79,9 @@ const GalleryLightBox = ({ setImageIndex, imageIndex, setOpen, isOpen }) => {
             config: { mass: 1, tension: 320, friction: 32 },
           }}
 
-        // renderImageOverlay={() => (<ImageOverlayComponent >)}
-        /* Use single or double click to zoom */
-        // singleClickToZoom
+          // renderImageOverlay={() => (<ImageOverlayComponent >)}
+          /* Use single or double click to zoom */
+          // singleClickToZoom
         />
       </>
     );

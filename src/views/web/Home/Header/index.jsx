@@ -5,7 +5,7 @@ const Header = () => {
         <div className="h-[100vw] md:h-[28rem] lg:h-[32rem] xl:h-[40rem] 2xl:h-[45rem] w-full md:w-1/2 bg-headerBg bg-no-repeat bg-right-top bg-contain md:bg-[length:100%_auto] pb-20"></div>
   
         <div className="flex flex-col justify-center text-center mt-[-10vw] md:mt-0 max-w-md px-3 mx-auto pb-20 w-full md:w-1/2">
-          <p className="text-[2.2rem] font-semibold font-anjoman mb-8 p-3 border-solid border-b-8 gradborder">
+          <p className="text-3xl md:text-4xl font-semibold font-anjoman mb-8 p-3 border-solid border-b-8 gradborder">
             جایی برای نجومی ها!
           </p>
           <div className=" text-lg font-light">

@@ -32,7 +32,7 @@ const BlogBox = () => {
       <div className="text-3xl lg:text-4xl font-bold font-anjoman flex justify-center mb-14">
         <p>اخبار روز علم نجوم در جهان</p>
       </div>
-      <div className="flex flex-col lg:flex-row justify-around gap-2 lg:gap-5 mb-5 lg:mb-10 lg:flex-wrap">
+      <div className="flex flex-col lg:flex-row justify-around gap-2 lg:gap-5 mb-5 lg:flex-wrap">
         {posts.map((post) => (
           <BlogCard
             key={post.id}

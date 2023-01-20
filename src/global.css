@@ -2,26 +2,28 @@
 
 @font-face {
   font-family: AnjomanMax;
-  font-style: normal;
-  font-weight: 100 300;
   src: url("assets/fonts/Anjoman/woff/AnjomanMax-Light.woff") format("woff"),
     url("assets/fonts/Anjoman/woff2/AnjomanMax-Light.woff2") format("woff2");
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: AnjomanMax;
-  font-style: normal;
-  font-weight: 400;
   src: url("assets/fonts/Anjoman/woff/AnjomanMax-Regular.woff") format("woff"),
     url("assets/fonts/Anjoman/woff2/AnjomanMax-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: AnjomanMax;
-  font-style: normal;
-  font-weight: 500 900;
   src: url("assets/fonts/Anjoman/woff/AnjomanMax-Bold.woff") format("woff"),
     url("assets/fonts/Anjoman/woff2/AnjomanMax-Bold.woff2") format("woff2");
+  font-weight: 500 900;
+  font-style: normal;
+  font-display: swap;
 }
-
 
 /* @font-face {
   font-family: AnjomanMax;
@@ -76,10 +78,82 @@
 /*? Vazir */
 @font-face {
   font-family: "Vazirmatn";
-  src: url("assets/fonts/Vazir/Vazirmatn[wght].woff2")
+  src: url("assets/fonts/Vazir/Vazirmatn-Thin.woff2")
       format("woff2 supports variations"),
-    url("assets/fonts/Vazir/Vazirmatn[wght].woff2") format("woff2-variations");
-  font-weight: 100 900;
+    url("assets/fonts/Vazir/Vazirmatn-Thin.woff2") format("woff2-variations");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazir/Vazirmatn-ExtraLight.woff2")
+      format("woff2 supports variations"),
+    url("assets/fonts/Vazir/Vazirmatn-ExtraLight.woff2") format("woff2-variations");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazir/Vazirmatn-Light.woff2")
+      format("woff2 supports variations"),
+    url("assets/fonts/Vazir/Vazirmatn-Light.woff2") format("woff2-variations");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazir/Vazirmatn-Regular.woff2")
+      format("woff2 supports variations"),
+    url("assets/fonts/Vazir/Vazirmatn-Regular.woff2") format("woff2-variations");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazir/Vazirmatn-Medium.woff2")
+      format("woff2 supports variations"),
+    url("assets/fonts/Vazir/Vazirmatn-Medium.woff2") format("woff2-variations");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazir/Vazirmatn-SemiBold.woff2")
+      format("woff2 supports variations"),
+    url("assets/fonts/Vazir/Vazirmatn-SemiBold.woff2") format("woff2-variations");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazir/Vazirmatn-Bold.woff2")
+      format("woff2 supports variations"),
+    url("assets/fonts/Vazir/Vazirmatn-Bold.woff2") format("woff2-variations");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazir/Vazirmatn-ExtraBold.woff2")
+      format("woff2 supports variations"),
+    url("assets/fonts/Vazir/Vazirmatn-ExtraBold.woff2") format("woff2-variations");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("assets/fonts/Vazir/Vazirmatn-Black.woff2")
+      format("woff2 supports variations"),
+    url("assets/fonts/Vazir/Vazirmatn-Black.woff2") format("woff2-variations");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }

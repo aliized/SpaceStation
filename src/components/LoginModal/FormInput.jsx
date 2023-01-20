@@ -10,13 +10,13 @@ const FormInput = ({
   error,
   touched,
 }) => {
-  const [passShow, setPassShow] = useState(true);
+  const [pwdShow, setPwdShow] = useState(true);
   const [icon, setIcon] = useState("");
 
   useEffect(() => {
     switch (type) {
       case "password":
-        setPassShow(false);
+        setPwdShow(false);
         setIcon(<IoLockClosed />);
         break;
       case "email":
@@ -43,7 +43,7 @@ const FormInput = ({
 
         <Field
           id={name}
-          type={!passShow ? "password" : "text"}
+          type={!pwdShow ? "password" : "text"}
           name={name}
           placeholder={placeHolder}
           className="leading-tight focus-visible:outline-none bg-none w-full peer"
@@ -56,10 +56,10 @@ const FormInput = ({
         {type === "password" ? (
           <button
             type="button"
-            onClick={() => setPassShow(!passShow)}
+            onClick={() => setPwdShow(!pwdShow)}
             className="hover:text-gray-700 text-xl flex justify-center items-center text-gray-300 px-1"
           >
-            {passShow ? <IoEyeOff className="text-gray-600" /> : <IoEye />}
+            {pwdShow ? <IoEyeOff className="text-gray-600" /> : <IoEye />}
           </button>
         ) : (
           ""

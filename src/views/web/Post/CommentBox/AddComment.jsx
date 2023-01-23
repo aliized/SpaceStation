@@ -7,10 +7,10 @@ import { useContext } from "react";
 import { BlogContext } from "context/BlogContext";
 import { createComment } from "services/web/blog";
 
-const AddComment = ({ postId, setComments }) => {
+const AddComment = ({ postId, setComments, total }) => {
   const { loggedIn, token, user } = useContext(BlogContext);
 
-  const handleAddComment = async (comment) => {
+  const handleAddComment = async (comment, { resetForm }) => {
     let addCommentToast = toast.loading("لطفا چند لحظه صبر کن");
 
     try {
@@ -39,6 +39,7 @@ const AddComment = ({ postId, setComments }) => {
       // const commentsList = [...comments];
       // commentsList.push(comment)
       // setComments(commentsList);
+      resetForm();
     } catch (err) {
       if (err.response) {
         toast.error(err.response.data.message, {
@@ -56,32 +57,32 @@ const AddComment = ({ postId, setComments }) => {
       {loggedIn ? (
         <Formik
           initialValues={{
-            body: "",
+            message: "",
           }}
           validationSchema={commentSchema}
-          onSubmit={(values) => {
-            handleAddComment(values);
+          onSubmit={(values ,{resetForm}) => {
+            handleAddComment(values,{resetForm});
           }}
         >
           {({ errors }) => (
             <>
-              <label htmlFor="body" className="text-right text-sm px-3 py-2">
-                {4} نظر برای این مطلب ثبت شده. نظر تو چیه؟
+              <label htmlFor="message" className="text-right text-sm px-3 py-2">
+                {total ? `${total} نظر برای این مطلب ثبت شده. نظر تو چیه؟` : (<p>&#127762; اولین نفری باش که نظرتو بهمون میگی </p>)}
               </label>
 
               <Form className="flex flex-col gap-1 w-full text-sm">
                 <Field
-                  id="body"
+                  id="message"
                   component="textarea"
                   rows="4"
                   placeholder="متن نظرت رو اینجا وارد کن"
-                  name="body"
+                  name="message"
                   className="border-2 border-gray-300 outline-none rounded-md py-2 px-3 resize-none text-gray-700 w-full"
                 />
 
                 <div className="text-sm text-red-600 px-2 duration-150">
-                  {errors.body ? (
-                    <ErrorMessage component="span" name="body" />
+                  {errors.message ? (
+                    <ErrorMessage component="span" name="message" />
                   ) : null}
                 </div>
                 <input

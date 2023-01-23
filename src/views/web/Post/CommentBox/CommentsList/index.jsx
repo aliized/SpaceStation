@@ -1,9 +1,17 @@
-import React from 'react'
-
-const CommentsList = () => {
+import Comment from "./Comment";
+const CommentsList = ({ comments }) => {
   return (
-    <div className='border-2 px-5 py-2 rounded-lg mt-20'>CommentList</div>
-  )
-}
+    <div className="py-10">
+      {comments.map((comment) => (
+        <Comment
+          key={comment.id}
+          message={comment.message}
+          time={comment.time}
+          user={comment.user}
+        />
+      ))}
+    </div>
+  );
+};
 
-export default CommentsList
+export default CommentsList;

@@ -176,14 +176,14 @@ const CommentBox = ({ postId }) => {
           (comment) => comment.id !== commentId
         );
         setComments(filtredComments);
+        setNumberOfComments(numberOfComments-1)
 
         toast.success(`${user.fullName} جان نظرت با موفقیت حذف شد`, {
           id: deleteCommentToast,
           duration: 4000,
         });
       } else {
-        console.log(res);
-        toast.error(`مشکل`, {
+        toast.error(`مشکلی در حذف نظر شما پیش آمده`, {
           id: deleteCommentToast,
           duration: 4000,
         });

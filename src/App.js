@@ -91,7 +91,7 @@ function App() {
       if (err.response) {
         toast.error(err.response.data.message, {
           id: loadingToast,
-          duration: 3000,
+          duration: 4000,
         });
       } else {
         toast.dismiss(loadingToast);
@@ -125,13 +125,13 @@ function App() {
         if (err.response.status === 404) {
           toast.error("قبلا ثبت نام نکردی؟ لطفا ثبت نام کن", {
             id: loadingToast,
-            duration: 3000,
+            duration: 4000,
           });
           setModalForm("register");
         } else {
           toast.error(err.response.data.message, {
             id: loadingToast,
-            duration: 3000,
+            duration: 4000,
           });
         }
       } else {

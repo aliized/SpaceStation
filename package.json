@@ -18,6 +18,7 @@
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-spring-lightbox": "^1.7.1",
+    "sweetalert2": "^11.7.0",
     "web-vitals": "^3.1.0",
     "yup": "^0.32.11"
   },

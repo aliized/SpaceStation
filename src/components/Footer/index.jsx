@@ -95,7 +95,13 @@ const Footer = () => {
 
         <div className="bg-gray-800 h-14 flex justify-center items-center text-gray-400">
           <p>
-            تمامی حقوق متعلق به <span className="text-blue-500">علی زارعی</span>{" "}
+            تمامی حقوق متعلق به{" "}
+            <a
+              href="https://www.linkedin.com/in/aliized"
+              className="text-blue-500"
+            >
+              علی زارعی
+            </a>{" "}
             می باشد.
           </p>
         </div>

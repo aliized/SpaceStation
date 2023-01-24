@@ -7,12 +7,11 @@ import { getPost } from "services/web/blog";
 
 import MainFrame from "components/containers/MainFrame";
 import Loading from "components/Loading";
-import CommentBox from "./CommentBox";
+import CommentBox from "./Comments";
 
 const SinglePost = () => {
   const navigate = useNavigate();
 
-  
   const [post, setPost] = useState({});
 
   const { postId } = useParams();
@@ -31,9 +30,9 @@ const SinglePost = () => {
         setLoading(false);
       } catch (err) {
         console.log(err.message);
-        if(err.response.status ===404){
-          console.log("redirect")
-          navigate('/notfound',)
+        if (err.response.status === 404) {
+          console.log("redirect");
+          navigate("/notfound");
         }
         setLoading(false);
       }
@@ -41,12 +40,13 @@ const SinglePost = () => {
     getData();
   }, [navigate, postId, setLoading]);
   return (
-    
     <div className="my-8">
       {!loading && Object.keys(post).length ? (
         <MainFrame bgColor={"bg-white"}>
           <div className="flex flex-col max-w-5xl gap-8 px-2 mx-auto sm:px-6">
-            <h4 className="mx-auto text-3xl md:text-4xl font-bold font-anjoman lg:mb-3">{post.title}</h4>
+            <h4 className="mx-auto text-3xl md:text-4xl font-bold font-anjoman lg:mb-3">
+              {post.title}
+            </h4>
             <div className="w-full">
               <img
                 className="object-cover w-full rounded-3xl aspect-video"
@@ -56,7 +56,7 @@ const SinglePost = () => {
             </div>
             <p> {post.body}</p>
             <div className="border-solid border-t-2 p-4 gap-4">
-              <CommentBox postId={postId}/>
+              <CommentBox postId={postId} />
             </div>
           </div>
         </MainFrame>

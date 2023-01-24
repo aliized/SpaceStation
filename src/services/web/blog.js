@@ -41,7 +41,7 @@ export const getPost = (postId) => {
 
 //  @desc   Add Post Comment
 //  @route  POST /post/add-comment
-export const createComment = (token,comment) => {
+export const createComment = (token, comment) => {
   return api.post("/post/add-comment", comment, {
     headers: { Authorization: `Bearer ${token}` },
   });
@@ -49,14 +49,19 @@ export const createComment = (token,comment) => {
 
 //  @desc   Edit Post Comment
 //  @route  PUT /post/edit-comment/:commentId
-export const editComment = (commentId, comment) => {
-  return api.put(`/post/edit-comment/${commentId}`, comment);
+export const editCommentApi = (token, comment) => {
+  console.log(`/post/edit-comment/${comment.id}`);
+  return api.put(`/post/edit-comment/${comment.id}`, comment, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
 };
 
 //  @desc   Delete Post Comment
 //  @route  DELETE /post/delete-comment/:commentId
-export const deleteComment = (commentId) => {
-  return api.delete(`/post/delete-comment/${commentId}`);
+export const deleteCommentApi = (token, commentId) => {
+  return api.delete(`/post/delete-comment/${commentId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
 };
 
 //  @desc   get post comments

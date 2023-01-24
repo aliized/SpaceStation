@@ -18,7 +18,7 @@ api.interceptors.response.use(null, (error) => {
     console.log(error);
       toast.error(" خطایی از سمت سرور پیش اومده :(", {
       id:"serverToast",
-      duration: 3000,
+      duration: 4000,
     });
   }
 

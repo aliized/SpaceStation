@@ -14,7 +14,7 @@ import CommentForm from "./CommentForm";
 import Comment from "./Comment";
 
 const CommentBox = ({ postId }) => {
-  const { token, user, loggedIn } = useContext(BlogContext);
+  const { token, user, loggedIn, setOpenModal } = useContext(BlogContext);
 
   const [comments, setComments] = useState([]);
   const [numberOfComments, setNumberOfComments] = useState(0);
@@ -106,7 +106,6 @@ const CommentBox = ({ postId }) => {
   const handleEditComment = async (comment, { resetForm }, parentId) => {
     let editCommentToast = toast.loading("لطفا چند لحظه صبر کن");
 
-
     try {
       //*sakhte objecte comment
       comment.id = parentId;
@@ -124,19 +123,16 @@ const CommentBox = ({ postId }) => {
 
       //*setStates
       const commentsArray = [...comments];
-      const desiredItemIndex = commentsArray.findIndex((cm) => cm.id === comment.id)
+      const desiredItemIndex = commentsArray.findIndex(
+        (cm) => cm.id === comment.id
+      );
       commentsArray[desiredItemIndex].message = comment.message;
       setComments(commentsArray);
 
-
-
-      toast.success(
-        `${user.fullName} جان نظرت با موفقیت ویرایش شد`,
-        {
-          id: editCommentToast,
-          duration: 4000,
-        }
-      );
+      toast.success(`${user.fullName} جان نظرت با موفقیت ویرایش شد`, {
+        id: editCommentToast,
+        duration: 4000,
+      });
       setActiveComment(null);
       resetForm();
     } catch (err) {
@@ -176,7 +172,7 @@ const CommentBox = ({ postId }) => {
           (comment) => comment.id !== commentId
         );
         setComments(filtredComments);
-        setNumberOfComments(numberOfComments-1)
+        setNumberOfComments(numberOfComments - 1);
 
         toast.success(`${user.fullName} جان نظرت با موفقیت حذف شد`, {
           id: deleteCommentToast,
@@ -200,17 +196,29 @@ const CommentBox = ({ postId }) => {
           <p>&#127762; اولین نفری باش که نظرتو بهمون میگی </p>
         )}
       </label>
+
       {loggedIn ? (
         <CommentForm
           postId={postId}
           setComments={setComments}
           handleSubmit={handleAddComment}
           submitLabel="ثبت نظر"
-        // hasCancelButton
-        // handleCancel={}
+          // hasCancelButton
+          // handleCancel={}
         />
       ) : (
-        <div>login first</div>
+        <div className=" py-3 md:py-5 flex gap-3 flex-col text-sm items-center">
+          <p>لطفا برای ثبت نظر وارد حساب کاربریت شو یا ثبت‌نام کن</p>
+
+          <button
+            className="bg-blue-500 hover:bg-blue-600 duration-100 rounded-full py-2 px-3 text-white"
+            type="button"
+            onClick={() => setOpenModal(true)}
+            name="loginButton"
+          >
+            ورود / ثبت نام
+          </button>
+        </div>
       )}
 
       {/* <CommentsList comments={comments} /> */}

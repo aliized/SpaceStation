@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import MainFrame from "components/containers/MainFrame";
-import { useEffect } from "react";
 
-const Loading = ({ bgColor, link = false }) => {
+const LoadingPost = ({ bgColor, link = false }) => {
   const [grayCode, setgrayCode] = useState("300");
 
   useEffect(() => {
@@ -46,4 +45,4 @@ const Loading = ({ bgColor, link = false }) => {
   );
 };
 
-export default Loading;
+export default LoadingPost;

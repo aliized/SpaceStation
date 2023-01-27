@@ -6,7 +6,7 @@ import { BlogContext } from "context/BlogContext";
 import { getPost } from "services/web/blog";
 
 import MainFrame from "components/containers/MainFrame";
-import Loading from "components/Loading";
+import Loading from "components/MultiRenderer";
 import CommentBox from "./Comments";
 
 const SinglePost = () => {

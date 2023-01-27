@@ -3,11 +3,11 @@ import { useContext } from "react";
 import { BlogContext } from "context/BlogContext";
 
 import BookBox from "./BookBox";
-import Loading from "components/Loading";
+import LoadingPost from "components/Loading/blog/LoadingPost";
+import MultiRenderer from "components/MultiRenderer";
 
 const Books = () => {
-  const { books } = useContext(BlogContext);
-console.log(books);
+  const { loading,books } = useContext(BlogContext);
   return (
     <>
       <div className="w-full mx-auto bg-bgHeader3  bg-no-repeat bg-cover
@@ -17,7 +17,8 @@ console.log(books);
 
       </div>
       <div className="flex flex-col gap-10 py-10 bg-white">
-        {books.length ? (
+      
+        {!loading && books.length ? (
           books.map((book) => (
             <BookBox
               key={book._id}
@@ -29,7 +30,9 @@ console.log(books);
             />
           ))
         ) : (
-          <Loading bgColor={"black"}/>
+          <MultiRenderer times={3}>
+          <LoadingPost bgColor={"black"}/>
+          </MultiRenderer>
 
         )}
       </div>

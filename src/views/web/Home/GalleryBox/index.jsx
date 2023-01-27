@@ -1,25 +1,15 @@
 import MainFrame from "components/containers/MainFrame";
 import GalleryCard from "./GalleryCard";
 
-import gallery1 from "assets/images/dynamic/gallery1.webp";
-import gallery2 from "assets/images/dynamic/gallery2.webp";
-import gallery3 from "assets/images/dynamic/gallery3.webp";
+import { useContext, useEffect } from "react";
+import { BlogContext } from "context/BlogContext";
+import MultiRenderer from "components/MultiRenderer";
+import { Link } from "react-router-dom";
+import { IoChevronBackOutline } from "react-icons/io5";
+import LoadingGalleryCard from "components/Loading/home/LoadingGalleryCard";
 
 const GalleryBox = () => {
-  const gallery = [
-    {
-      id: 1,
-      photo: gallery1,
-    },
-    {
-      id: 2,
-      photo: gallery2,
-    },
-    {
-      id: 3,
-      photo: gallery3,
-    },
-  ];
+  const { loading, gallery } = useContext(BlogContext);
 
   return (
     <MainFrame bgColor={"bg-white"}>
@@ -27,10 +17,28 @@ const GalleryBox = () => {
         <div className="text-3xl md:text-4xl font-bold font-anjoman flex justify-center lg:mb-7">
           <p>عکس های نجومی</p>
         </div>
+        {!loading && gallery.length ? (
+          <>
+            {gallery
+              .filter((img) => img.aspectRatio > 1.3)
+              .slice(0, 5)
+              .map((img) => (
+                <GalleryCard key={img._id} img={img} />
+              ))}
+          </>
+        ) : (
+          <MultiRenderer times={3}>
+            <LoadingGalleryCard />
+          </MultiRenderer>
+        )}
 
-        {gallery.map((photo) => (
-          <GalleryCard key={photo.id} title={"no-title"} photo={photo.photo} />
-        ))}
+        <Link
+          to="gallery"
+          className="text-blue-600 font-bold flex items-center gap-1 text-lg"
+        >
+          همه ی تصاویر
+          <IoChevronBackOutline />
+        </Link>
       </div>
     </MainFrame>
   );

@@ -1,35 +1,39 @@
 import MainFrame from "components/containers/MainFrame";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { BlogContext } from "context/BlogContext";
+import LoadingPost from "components/Loading/blog/LoadingPost";
+import { SERVER_URL } from "config";
 
-import Dictionary from "assets/images/dynamic/Dictionary.webp";
 const DictionaryBox = () => {
+  const { loading, blog } = useContext(BlogContext);
+  const post = blog[2];
+
   return (
     <MainFrame bgColor={"bg-black"}>
-      <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 py-8">
-        <img src={Dictionary} alt="" className=" h-full" />
-        <h4 className="text-4xl font-bold font-anjoman"> تلسکوپ و آسمان شب</h4>
-        <div className="leading-7 ">
-          <p>
-            تلِسکوپ (به انگلیسی: Telescope) یا دوربین فضایی یا فرابین، وسیله‌ای
-            برای دیدن اجرام آسمانی با استفاده از تابش الکترومغناطیس (به انگلیسی:
-            Electromgnetic radiation) (مانند نور مرئی) به‌صورت واضح و دقیق است.
-            نخستین فرابین کارا در ابتدای سدهٔ هفدهم و با استفاده از لنزهای
-            شیشه‌ای در هلند اختراع شد. در درازای چند دهه، تلسکوپ (فرابین)
-            بازتابی که از آینه استفاده می‌کرد اختراع شد؛ بسیاری از انواع نوتری
-            از فرابین‌ها در سدهٔ ۲۰ میلادی زاده شدند. رادیوفرابین در دههٔ ۱۹۳۰ و
-            فرابین فرابنفش در سال ۱۹۶۰ از جملهٔ این اختراعات بودند. واژهٔ تلسکوپ
-            می‌تواند به تمام حیطهٔ وسایل عملیاتی در سرتاسر ناحیهٔ میدان
-            الکترومغناطیس اشاره داشته باشد.
-          </p>
+      { !loading && post ? (
+        <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 py-8">
+        <div className="rounded-large aspect-video overflow-hidden w-full">
+
+<img  src={`${SERVER_URL}/img/blog/${post.thumbnail}`}
+  alt={`تصویر ${post.title}`} className=" h-full w-full object-cover" />
+</div>
+          <h4 className="text-4xl font-bold font-anjoman"> {post.title} </h4>
+          <div className="leading-7 ">
+            <p>{post.body}...</p>
+          </div>
+          <div className="flex justify-end w-full">
+            <Link
+              to={`/post/${post._id}/${post.title}`}
+              className="bg-blue-700 text-white py-2 px-5 rounded-full"
+            >
+              ادامه مطلب
+            </Link>
+          </div>
         </div>
-        <div className="flex justify-end w-full">
-          <a
-            href="link"
-            className="bg-blue-700 text-white py-2 px-5 rounded-full"
-          >
-            ادامه مطلب
-          </a>
-        </div>
-      </div>
+      ) : (
+        <LoadingPost bgColor={"black"} link={true} />
+      )}
     </MainFrame>
   );
 };

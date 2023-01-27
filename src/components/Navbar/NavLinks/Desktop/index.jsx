@@ -8,7 +8,7 @@ const DesktopLinks = () => {
   return (
     <ul className="items-center hidden lg:flex gap-14">
       {navLinks.map((heading) => (
-        <div key={heading.name}>
+        <div key={heading.id}>
           <div className="px-3 group">
             <Link
               to={heading.link}

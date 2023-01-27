@@ -3,10 +3,12 @@ import { useContext } from "react";
 import { BlogContext } from "context/BlogContext";
 
 import MovieBox from "./MovieBox";
-import Loading from "components/Loading";
+import Loading from "components/MultiRenderer";
+import MultiRenderer from "components/MultiRenderer";
+import LoadingPost from "components/Loading/blog/LoadingPost";
 
 const Movies = () => {
-  const { movies } = useContext(BlogContext);
+  const {loading, movies } = useContext(BlogContext);
 
   return (
     <>
@@ -17,7 +19,7 @@ const Movies = () => {
 
       </div>
       <div className="flex flex-col gap-10 py-10 bg-white">
-        {movies.length ? (
+        {!loading && movies.length ? (
           movies.map((movie) => (
             <MovieBox
               key={movie._id}
@@ -31,7 +33,9 @@ const Movies = () => {
             />
           ))
         ) : (
-          <Loading bgColor={"black"}/>
+          <MultiRenderer times={3}>
+          <LoadingPost bgColor={"black"}/>
+          </MultiRenderer>
 
         )}
       </div>

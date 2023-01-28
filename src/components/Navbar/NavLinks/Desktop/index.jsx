@@ -9,7 +9,7 @@ const DesktopLinks = () => {
     <ul className="items-center hidden lg:flex gap-14">
       {navLinks.map((heading) => (
         <div key={heading.id}>
-          <div className="px-3 group">
+          <div className="group">
             <Link
               to={heading.link}
               className="flex items-center justify-between py-4 text-lg group"
@@ -26,7 +26,7 @@ const DesktopLinks = () => {
               ) : null}
             </Link>
 
-            {heading.submenu ? <DesktopSubMenu sublinks={heading.sublinks} key={heading.id}/> : ""}
+            {heading.submenu ? <DesktopSubMenu sublinks={heading.sublinks} key={heading.id}/> : null}
           </div>
         </div>
       ))}

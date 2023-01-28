@@ -15,7 +15,7 @@ const BlogBox = () => {
       </div>
       <div className="flex flex-col lg:flex-row justify-around gap-3 lg:gap-5 mb-5 ">
       
-        {!loading && blogIndex.length
+        { !loading && blogIndex.length
           ? blogIndex
               .slice(0, 3)
               .map((post) => (
@@ -27,7 +27,7 @@ const BlogBox = () => {
                   photo={post.thumbnail}
                 />
               ))
-          : <MultiRenderer times={3}>
+          : <MultiRenderer containerClass={"w-full"} times={3}>
             <LoadingBlogCard/>
           </MultiRenderer>}
       </div>

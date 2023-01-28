@@ -19,12 +19,12 @@ const GalleryPage = () => {
 
   return (
     <>
-      <div className="flex justify-center py-10 text-6xl font-bold bg-opacity-30 font-anjoman">
+      <div className="flex justify-center py-10  text-3xl lg:text-6xl font-bold bg-opacity-30 font-anjoman">
         گالری تصاویر
       </div>
 
       <div className="container gap-1 mx-auto my-6 md:gap-2 ">
-        { !loading && gallery.length ? (
+        {!loading && gallery.length ? (
           <Masonry
             breakpointCols={{ default: 5, 1280: 4, 768: 3 }}
             className="flex gap-1 md:gap-2"
@@ -62,55 +62,3 @@ const GalleryPage = () => {
   );
 };
 export default GalleryPage;
-
-// import { images } from "./images";
-// const GalleryPage = () => {
-//   return (
-//     <>
-//       <div className="flex justify-center py-10 text-4xl font-bold bg-blue-700 bg-opacity-30">گالری تصاویر</div>
-//       <div className="container gap-1 mx-auto my-6 md:gap-2 columns-3 md:columns-4 lg:columns-5">
-
-//         {images.map((img,num) => (
-//           <div className="relative mb-1 text-sm group md:mb-2 hover:cursor-pointer">
-//             <img
-//               className="object-cover w-full h-full"
-//               src={img.src}
-//               alt={img.caption}
-//             />
-//             <p className="absolute w-full bg-black backdrop-blur-[2px]	 bg-opacity-60 top-0
-//             p-2">
-
-//             {num}
-//             </p>
-//             <p className="absolute w-full bg-black backdrop-blur-[2px]	 bg-opacity-60 bottom-0
-//             px-4 group-hover:py-4 group-hover:backdrop-blur-sm group-hover:bg-opacity-70 duration-200 h-0 group-hover:h-auto overflow-hidden">
-//             {img.caption}
-
-//             </p>
-//           </div>
-//         ))}
-//       </div>
-//     </>
-//   );
-// };
-// export default GalleryPage;
-
-// <div className="relative text-sm group only:hover:cursor-pointer">
-//               <img
-//                 className="object-cover w-full h-full"
-//                 src={img.src}
-//                 alt={img.caption}
-//               />
-//               <p
-//                 className="absolute w-full bg-black backdrop-blur-[2px]	 bg-opacity-60 top-0
-//             p-2"
-//               >
-//                 {num}
-//               </p>
-//               <p
-//                 className="absolute w-full bg-black backdrop-blur-[2px]	 bg-opacity-60 bottom-0
-//             px-4 group-hover:py-4 group-hover:backdrop-blur-sm group-hover:bg-opacity-70 duration-200 h-0 group-hover:h-auto overflow-hidden"
-//               >
-//                 {img.caption}
-//               </p>
-//             </div>

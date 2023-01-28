@@ -1,7 +1,7 @@
 import MainFrame from "components/containers/MainFrame";
 import GalleryCard from "./GalleryCard";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { BlogContext } from "context/BlogContext";
 import MultiRenderer from "components/MultiRenderer";
 import { Link } from "react-router-dom";
@@ -27,7 +27,7 @@ const GalleryBox = () => {
               ))}
           </>
         ) : (
-          <MultiRenderer times={3}>
+          <MultiRenderer containerClass={"w-full"} times={3}>
             <LoadingGalleryCard />
           </MultiRenderer>
         )}

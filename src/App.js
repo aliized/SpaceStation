@@ -157,6 +157,9 @@ function App() {
         const userInfo = res.data;
         loginDataSet(userInfo, userToken);
       } catch (err) {
+        if(err.response.status===401){
+          logoutDataSet();
+        }
         console.log(err);
       }
     })();

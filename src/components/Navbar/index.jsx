@@ -14,12 +14,11 @@ const Navbar = () => {
   return (
     <nav className=" text-black bg-black lg:text-white">
       <div className="container flex items-center justify-between py-2 px-4 mx-auto  h-16">
-        
         <div
           className="text-3xl text-white lg:hidden flex"
           onClick={() => setOpenNav(!openNav)}
         >
-          <IoMenuOutline/>
+          <IoMenuOutline />
         </div>
 
         <NavLogo />
@@ -28,7 +27,6 @@ const Navbar = () => {
         <MobileLinks />
 
         <NavButtons />
-
       </div>
     </nav>
   );

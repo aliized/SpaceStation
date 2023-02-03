@@ -1,9 +1,8 @@
 import Masonry from "react-masonry-css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import GalleryLightBox from "./GalleryLightBox";
 import { BlogContext } from "context/BlogContext";
 import { SERVER_URL } from "config";
-import MultiRenderer from "components/MultiRenderer";
 import LoadingGallery from "components/Loading/gallery/LoadingGallery";
 
 const GalleryPage = () => {
@@ -16,6 +15,23 @@ const GalleryPage = () => {
     setIsLightBoxOpen(true);
     setLightBoxIndex(index);
   };
+
+
+  //*my masonry Idea
+  // const n = 5;
+  // let x = 1;
+  // useEffect(() => {
+  //   for (let i = 1; i < n; i++) {
+  //     for (let index in gallery) {
+  //       if (i === index % n) {
+
+  //         console.log(x+"="+index);
+  //         x++;
+  //       }
+  //     }
+  //   }
+  // }, [gallery]);
+
 
   return (
     <>
@@ -49,7 +65,7 @@ const GalleryPage = () => {
             ))}
           </Masonry>
         ) : (
-          <LoadingGallery/>
+          <LoadingGallery />
         )}
       </div>
       <GalleryLightBox

@@ -39,11 +39,23 @@ const MobileUserMenu = ({ openUserMenu, setOpenUserMenu }) => {
         </div>
 
         <div className="p-2 flex flex-col items-center px-8">
-          <img
-            className="rounded-full overflow-hidden aspect-square w-20 h-20 my-2"
-            src={`${SERVER_URL}/img/users/${user.profilePic}`}
-            alt={user.fullname}
-          />
+         {user.profilePic ? (
+          <>
+            <img
+              className="overflow-hidden rounded-full aspect-square w-20 h-20"
+              src={`${SERVER_URL}/img/users/${user.profilePic}`}
+              alt={user.fullname}
+            />
+          </>
+        ) : (
+          <>
+            <img
+              className="overflow-hidden rounded-full aspect-square w-20 h-20"
+              src={`${SERVER_URL}/img/users/defaultPic.webp`}
+              alt={user.fullname}
+            />
+          </>
+        )}
           <Link className=" py-2 px-8 text-xl font-bold" to="dashboard">
             {user.fullName}
           </Link>

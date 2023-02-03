@@ -15,18 +15,30 @@ const DesktopUserMenu = () => {
 
       <div className=" bg-white bg-opacity-90 backdrop-blur-sm shadow-lg rounded-md text-sm flex flex-col w-56 overflow-hidden">
       <div className="py-1 flex flex-col items-center px-8">
-          <img
-            className="rounded-full overflow-hidden aspect-square w-20 h-20 my-2"
-            src={`${SERVER_URL}/img/users/${user.profilePic}`}
-            alt={user.fullname}
-          />
-          <Link className=" pt-1 px-8 text-xl font-bold" to="dashboard">
+          {user.profilePic ? (
+          <>
+            <img
+              className="overflow-hidden rounded-full aspect-square w-20 h-20"
+              src={`${SERVER_URL}/img/users/${user.profilePic}`}
+              alt={user.fullname}
+            />
+          </>
+        ) : (
+          <>
+            <img
+              className="overflow-hidden rounded-full aspect-square w-20 h-20"
+              src={`${SERVER_URL}/img/users/defaultPic.webp`}
+              alt={user.fullname}
+            />
+          </>
+        )}
+          <Link className=" pt-1 px-8 text-xl font-bold" to="user/dashboard">
             {user.fullName}
           </Link>
         </div>
         <div className="flex flex-col items-stretch text-center">
           <Link
-            to="dashboard"
+            to="user/dashboard"
             className="flex justify-center items-center gap-1 py-3 border-t border-gray-300 px-8"
           >
             <span className="text-lg">
@@ -35,7 +47,7 @@ const DesktopUserMenu = () => {
             پنل کاربری
           </Link>
           <Link
-            to="dashboard"
+            to="user/settings"
             className="flex justify-center items-center gap-1 py-3 border-t border-gray-300 px-8"
           >
             <span className="text-lg">

@@ -11,11 +11,23 @@ const UserMenu = () => {
     <>
       <div className="group/UserMenu relative">
         <div className="flex items-center  text-sm" onClick={()=>setOpenUserMenu(true)}>
-          <img
-            className="rounded-full overflow-hidden aspect-square w-10 h-10 my-2"
-            src={`${SERVER_URL}/img/users/${user.profilePic}`}
-            alt={user.fullname}
-          />
+          {user.profilePic ? (
+          <>
+            <img
+              className="overflow-hidden rounded-full aspect-square w-10 h-10"
+              src={`${SERVER_URL}/img/users/${user.profilePic}`}
+              alt={user.fullname}
+            />
+          </>
+        ) : (
+          <>
+            <img
+              className="overflow-hidden rounded-full aspect-square w-10 h-10"
+              src={`${SERVER_URL}/img/users/defaultPic.webp`}
+              alt={user.fullname}
+            />
+          </>
+        )}
 
         </div>
           <DesktopUserMenu />

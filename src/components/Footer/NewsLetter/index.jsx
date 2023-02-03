@@ -6,7 +6,7 @@ const NewsLetter = () => {
       <div className="flex flex-col justify-center gap-9">
         <div className="flex gap-3">
           <div className="flex flex-col gap-4 sm:gap-6 pt-3 ">
-            <div className="text-2xl font-bold font-anjoman ">
+            <div className="text-2xl font-[900] leading-normal font-anjoman ">
               {" "}
               <p> اولین کسی باش </p>
               <p className=" text-3xl md:text-4xl"> که از اخبار نجوم و فضا باخبر میشه</p>

@@ -1,5 +1,5 @@
 /*? Anjoman */
-
+/* 
 @font-face {
   font-family: AnjomanMax;
   src: url("assets/fonts/Anjoman/woff/AnjomanMax-Light.woff") format("woff"),
@@ -23,6 +23,131 @@
   font-weight: 500 900;
   font-style: normal;
   font-display: swap;
+} */
+
+@font-face {
+  font-display: swap;
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 100;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-Thin.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-Thin.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 200;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-ExLight.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-ExLight.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 300;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-Light.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-Light.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-Regular.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 500;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-Medium.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 600;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-SemiBold.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-SemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 700;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-Bold.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 750;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-ExBold.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-ExBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 800;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-Black.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 850;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-ExBlack.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-ExBlack.woff2") format("woff2");
+}
+
+
+
+@font-face {
+  font-display: swap;
+
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 900;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-Hv.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-Hv.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 950;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-SuperHv.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-SuperHv.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+
+  font-family: AnjomanMax;
+  font-style: normal;
+  font-weight: 1000;
+  src: url("assets/fonts/Anjoman/woff/AnjomanMax-Fat.woff") format("woff"),
+    url("assets/fonts/Anjoman/woff2/AnjomanMax-Fat.woff2") format("woff2");
 }
 
 /* @font-face {
@@ -89,7 +214,8 @@
   font-family: "Vazirmatn";
   src: url("assets/fonts/Vazir/Vazirmatn-ExtraLight.woff2")
       format("woff2 supports variations"),
-    url("assets/fonts/Vazir/Vazirmatn-ExtraLight.woff2") format("woff2-variations");
+    url("assets/fonts/Vazir/Vazirmatn-ExtraLight.woff2")
+      format("woff2-variations");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -125,7 +251,8 @@
   font-family: "Vazirmatn";
   src: url("assets/fonts/Vazir/Vazirmatn-SemiBold.woff2")
       format("woff2 supports variations"),
-    url("assets/fonts/Vazir/Vazirmatn-SemiBold.woff2") format("woff2-variations");
+    url("assets/fonts/Vazir/Vazirmatn-SemiBold.woff2")
+      format("woff2-variations");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -143,7 +270,8 @@
   font-family: "Vazirmatn";
   src: url("assets/fonts/Vazir/Vazirmatn-ExtraBold.woff2")
       format("woff2 supports variations"),
-    url("assets/fonts/Vazir/Vazirmatn-ExtraBold.woff2") format("woff2-variations");
+    url("assets/fonts/Vazir/Vazirmatn-ExtraBold.woff2")
+      format("woff2-variations");
   font-weight: 800;
   font-style: normal;
   font-display: swap;

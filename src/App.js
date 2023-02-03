@@ -225,6 +225,7 @@ function App() {
         loggedIn,
         token,
         user,
+        setUser,
       }}
     >
       <div className="relative font-vazir">

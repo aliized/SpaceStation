@@ -26,6 +26,7 @@ export const BlogContext = createContext({
   loggedIn: false,
   token: null,
   user: {},
+  setUser: () => {},
 
 });
 //   setContacts: () => {},

@@ -1,6 +1,8 @@
-import { BlogContext } from "context/BlogContext";
 import { useContext, useEffect, useState } from "react";
 import { IoPersonOutline, IoSearchOutline } from "react-icons/io5";
+
+import { BlogContext } from "context/BlogContext";
+
 import UserMenu from "./UserMenu";
 
 const NavButtons = () => {

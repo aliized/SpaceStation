@@ -6,8 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         IranSans: ["IranSans", "sans-serif"],
-        vazir:["Vazirmatn"],
-        anjoman:["AnjomanMax"],
+        vazir: ["Vazirmatn"],
+        anjoman: ["AnjomanMax"],
       },
       backgroundImage: {
         headerBg: "url('/src/assets/images/earthBg.webp')",
@@ -18,14 +18,10 @@ module.exports = {
         bgHeader1: "url('/src/assets/images/bgHeader1.webp')",
         bgHeader2: "url('/src/assets/images/bgHeader2.webp')",
         bgHeader3: "url('/src/assets/images/bgHeader3.webp')",
-
       },
       backgroundSize: { "60%": "65%" },
       borderRadius: { large: "4.5rem" },
     },
-
   },
-  plugins: [
-    require('@tailwindcss/line-clamp'),
-  ],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

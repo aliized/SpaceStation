@@ -2,7 +2,7 @@ import { SERVER_URL } from "config";
 
 const MovieCard = ({ movie }) => {
   return (
-    <div  className="flex flex-col md:flex-row w-full lg:w-auto mx-auto max-w-5xl lg:items-center gap-5 lg:gap-10">
+    <div className="flex flex-col md:flex-row w-full lg:w-auto mx-auto max-w-5xl lg:items-center gap-5 lg:gap-10">
       <div className="w-2/3 mx-auto md:w-1/3  rounded-3xl overflow-hidden aspect-[3/4] relative  ">
         <img
           src={`${SERVER_URL}/img/movies/${movie.thumbnail}`}

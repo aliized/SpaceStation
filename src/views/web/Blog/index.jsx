@@ -1,10 +1,10 @@
 import { useContext } from "react";
 
+import LoadingPost from "components/Loading/blog/LoadingPost";
+import MultiRenderer from "components/MultiRenderer";
 import { BlogContext } from "context/BlogContext";
 
 import PostBox from "./PostBox";
-import LoadingPost from "components/Loading/blog/LoadingPost";
-import MultiRenderer from "components/MultiRenderer";
 
 const Blog = () => {
   const { blogIndex, loading } = useContext(BlogContext);

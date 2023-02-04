@@ -7,12 +7,13 @@ const LoadingPost = ({ bgColor, link = false }) => {
 
   useEffect(() => {
     bgColor === "black" ? setgrayCode("700") : setgrayCode("300");
-   
   }, [bgColor]);
 
   return (
     <MainFrame bgColor={`bg-${bgColor}`}>
-    <span className="bg-gray-300"><span className="bg-gray-700" ></span></span>
+      <span className="bg-gray-300">
+        <span className="bg-gray-700"></span>
+      </span>
       <div className="flex flex-col max-w-5xl gap-8 px-2 mx-auto sm:px-6 animate-pulse ">
         <h4 className="mx-auto text-3xl lg:mb-3">
           <div className={`w-64 h-6 my-1 bg-gray-${grayCode}`}></div>

@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { Formik, Form } from "formik";
 
 import { BlogContext } from "context/BlogContext";
+import { Form, Formik } from "formik";
 import { registerSchema } from "validators/userSchema";
 
 import FormInput from "../FormInput";

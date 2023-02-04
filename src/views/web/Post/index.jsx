@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import Loading from "components/MultiRenderer";
+import MainFrame from "components/containers/MainFrame";
 import { SERVER_URL } from "config";
 import { BlogContext } from "context/BlogContext";
 import { getPost } from "services/web/blog";
 
-import MainFrame from "components/containers/MainFrame";
-import Loading from "components/MultiRenderer";
 import CommentBox from "./Comments";
 
 const SinglePost = () => {

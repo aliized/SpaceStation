@@ -1,8 +1,3 @@
-import { Link } from "react-router-dom";
-
-import NewsLetter from "./NewsLetter";
-
-import logo from "assets/images/LogoTextColored.webp";
 import {
   IoLogoFacebook,
   IoLogoInstagram,
@@ -10,6 +5,11 @@ import {
   IoLogoTwitter,
   IoLogoYoutube,
 } from "react-icons/io5";
+import { Link } from "react-router-dom";
+
+import logo from "assets/images/LogoTextColored.webp";
+
+import NewsLetter from "./NewsLetter";
 
 const Footer = () => {
   return (

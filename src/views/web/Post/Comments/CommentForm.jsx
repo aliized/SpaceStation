@@ -1,5 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
-
+import { ErrorMessage, Field, Form, Formik } from "formik";
 import { commentSchema } from "validators/commentSchema";
 
 const CommentForm = ({
@@ -22,7 +21,7 @@ const CommentForm = ({
           handleSubmit(values, { resetForm }, parentId);
         }}
       >
-        {({ errors, isSubmitting ,dirty}) => (
+        {({ errors, isSubmitting, dirty }) => (
           <>
             <Form className="flex flex-col gap-1 w-full text-sm">
               <Field
@@ -53,7 +52,11 @@ const CommentForm = ({
                 <button
                   disabled={isSubmitting || !dirty}
                   type="submit"
-                  className={`px-5 py-2 text-white bg-gray-400  rounded-full duration-100  inline-block w-28 ${isSubmitting || !dirty?null:"cursor-pointer hover:bg-blue-500"}`}
+                  className={`px-5 py-2 text-white bg-gray-400  rounded-full duration-100  inline-block w-28 ${
+                    isSubmitting || !dirty
+                      ? null
+                      : "cursor-pointer hover:bg-blue-500"
+                  }`}
                 >
                   {submitLabel}
                 </button>

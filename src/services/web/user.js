@@ -19,6 +19,12 @@ export const updateProfilePicApi = (token, data = null) => {
   });
 };
 
+export const changeNameApi = (token, data) => {
+  return api.put("/users/edit-fullname", data, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+};
+
 //  @desc   authCheck
 //  @route  POST /users/auth
 export const authApi = (token, data = {}) => {

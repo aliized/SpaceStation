@@ -1,17 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 
 import { BlogContext } from "context/BlogContext";
 import {
+  createComment,
+  deleteCommentApi,
   editCommentApi,
   getComments,
-  deleteCommentApi,
-  createComment,
 } from "services/web/blog";
+import Swal from "sweetalert2";
 
-import CommentForm from "./CommentForm";
 import Comment from "./Comment";
+import CommentForm from "./CommentForm";
 
 const CommentBox = ({ postId }) => {
   const { token, user, loggedIn, setOpenModal } = useContext(BlogContext);
@@ -85,7 +85,7 @@ const CommentBox = ({ postId }) => {
         {
           id: addCommentToast,
           duration: 4000,
-        }
+        },
       );
       setActiveComment(null);
       resetForm();
@@ -124,7 +124,7 @@ const CommentBox = ({ postId }) => {
       //*setStates
       const commentsArray = [...comments];
       const desiredItemIndex = commentsArray.findIndex(
-        (cm) => cm.id === comment.id
+        (cm) => cm.id === comment.id,
       );
       commentsArray[desiredItemIndex].message = comment.message;
       setComments(commentsArray);
@@ -169,7 +169,7 @@ const CommentBox = ({ postId }) => {
       const res = await deleteCommentApi(token, commentId);
       if (res.status === 200) {
         const filtredComments = comments.filter(
-          (comment) => comment.id !== commentId
+          (comment) => comment.id !== commentId,
         );
         setComments(filtredComments);
         setNumberOfComments(numberOfComments - 1);

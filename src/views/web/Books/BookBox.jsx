@@ -1,13 +1,7 @@
-import { SERVER_URL } from "config";
 import MainFrame from "components/containers/MainFrame";
+import { SERVER_URL } from "config";
 
-const BookBox = ({
-  bookName,
-  photo,
-  writer,
-  content,
-  bookId,
-}) => {
+const BookBox = ({ bookName, photo, writer, content, bookId }) => {
   return (
     <MainFrame bgColor={"bg-black"}>
       <div className="flex flex-col max-w-5xl gap-8 px-2 py-2 mx-auto sm:px-6">
@@ -22,7 +16,9 @@ const BookBox = ({
           </div>
 
           <div className="flex flex-col gap-2">
-            <h4 className="py-2 mb-2 text-3xl md:text-2xl font-bold font-anjoman">کتاب {bookName}</h4>
+            <h4 className="py-2 mb-2 text-3xl md:text-2xl font-bold font-anjoman">
+              کتاب {bookName}
+            </h4>
             <p>امتیاز: 8.4</p>
             <p>ژانر: علمی تخیلی، درام، </p>
             <p>سال انتشار: 1397</p>
@@ -34,7 +30,7 @@ const BookBox = ({
 
         <div className="flex flex-col gap-3">
           {/* <p className=" leading-loose"> {content}</p> */}
-         
+
           {content}
         </div>
         {/* <div className="flex justify-end w-full">

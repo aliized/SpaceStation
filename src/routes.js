@@ -1,19 +1,19 @@
 import AdminRoutes from "components/AdminRoutes/index.";
 import NotCreated from "components/notCreated";
 import AdminPanel from "views/admin/AdminPanel";
+import UserPanel from "views/userPanel";
+import Account from "views/userPanel/tabs/Account";
+import Dashboard from "views/userPanel/tabs/Dashboard";
+import Security from "views/userPanel/tabs/Security";
+import Settings from "views/userPanel/tabs/Settings";
 import NotFound from "views/web/404";
 import AboutUs from "views/web/About";
 import Blog from "views/web/Blog";
 import Books from "views/web/Books";
-import UserPanel from "views/userPanel";
 import GalleryPage from "views/web/Gallery";
 import Home from "views/web/Home";
 import Movies from "views/web/Movies";
 import SinglePost from "views/web/Post";
-import Dashboard from "views/userPanel/tabs/Dashboard";
-import Account from "views/userPanel/tabs/Account";
-import Security from "views/userPanel/tabs/Security";
-import Settings from "views/userPanel/tabs/Settings";
 
 const routes = [
   { path: "/", element: <Home /> },

@@ -1,11 +1,12 @@
+import React, { useContext, useRef, useState } from "react";
+import AvatarEditor from "react-avatar-editor";
+import toast from "react-hot-toast";
+import { AiOutlineZoomIn, AiOutlineZoomOut } from "react-icons/ai";
+import { IoClose, IoTrash, IoTrashOutline } from "react-icons/io5";
+
 import ModalContainer from "components/ModalContainer";
 import { SERVER_URL } from "config";
 import { BlogContext } from "context/BlogContext";
-import React, { useContext, useRef, useState } from "react";
-import AvatarEditor from "react-avatar-editor";
-import { IoClose, IoTrash, IoTrashOutline } from "react-icons/io5";
-import { AiOutlineZoomIn, AiOutlineZoomOut } from "react-icons/ai";
-import toast from "react-hot-toast";
 import { updateProfilePicApi } from "services/web/user";
 
 const ProfilePic = () => {
@@ -14,9 +15,12 @@ const ProfilePic = () => {
   const [newPic, setNewPic] = useState(null);
   const editor = useRef(null);
 
-  const handleSetPic = (pic) => {
+  const handleSetPic = (e) => {
+    const pic = e.target.files[0];
     setImgScale(1);
     setNewPic(pic);
+    console.log(pic);
+    e.target.value = null;
   };
 
   const getEditedPic = async () => {
@@ -27,7 +31,9 @@ const ProfilePic = () => {
         .toDataURL();
       const fetchedFile = await fetch(fileDataUrl);
       const fileData = await fetchedFile.blob();
-      let newFile = new File([fileData], newPic.name, { type: newPic.type });
+      let newFile = new File([fileData], newPic.name, {
+        type: newPic.type,
+      });
 
       return newFile;
     } else {
@@ -84,7 +90,7 @@ const ProfilePic = () => {
         {user.profilePic ? (
           <>
             <img
-              className="overflow-hidden rounded-full aspect-square w-28 h-28"
+              className={` overflow-hidden rounded-full aspect-square w-28 h-28`}
               src={`${SERVER_URL}/img/users/${user.profilePic}`}
               alt={user.fullname}
             />
@@ -112,7 +118,8 @@ const ProfilePic = () => {
             name="newPic"
             id="newPic"
             accept=".jpg,.jpeg,.png,.webp"
-            onChange={(e) => handleSetPic(e.target.files[0])}
+            // value={newPic.name}
+            onChange={(e) => handleSetPic(e)}
           />
           {user.profilePic ? (
             <button

@@ -1,9 +1,10 @@
-import { BlogContext } from "context/BlogContext";
 import React, { useContext } from "react";
+
 import flyingRocket from "assets/images/flyingRocket.webp";
+import { BlogContext } from "context/BlogContext";
 
 const Dashboard = () => {
-  const { logout, user } = useContext(BlogContext);
+  const { user } = useContext(BlogContext);
 
   return (
     <div className="p-4 flex flex-1 flex-col items-center">

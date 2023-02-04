@@ -10,8 +10,6 @@ const CommentButtons = ({
 }) => {
   return (
     <div className="py-1 flex text-gray-500 gap-2 text-xs">
-
-    
       {canReply && (
         <button
           type="button"
@@ -21,7 +19,6 @@ const CommentButtons = ({
         </button>
       )}
 
-
       {canEdit && (
         <button
           type="button"
@@ -30,7 +27,6 @@ const CommentButtons = ({
           ویرایش
         </button>
       )}
-
 
       {canDelete && (
         <button type="button" onClick={() => handleDeleteComment(comment.id)}>

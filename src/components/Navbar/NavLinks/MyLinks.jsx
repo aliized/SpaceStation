@@ -1,6 +1,12 @@
 export const navLinks = [
   //* link ba sub menu
-  { id: 39, name: " اخبار نجوم", link: "/blog", submenu: false, sublinks: [] },
+  {
+    id: 39,
+    name: " اخبار نجوم",
+    link: "/blog",
+    submenu: false,
+    sublinks: [],
+  },
   { id: 61, name: "فیلم ها", link: "/movies", submenu: false, sublinks: [] },
 
   { id: 60, name: "کتاب ها", link: "/books", submenu: false, sublinks: [] },
@@ -63,7 +69,6 @@ export const navLinks = [
           { id: 35, name: "سیاره ها", link: "/" },
         ],
       },
-      
     ],
   },
 ];

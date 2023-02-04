@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import { Formik, Form } from "formik";
 
 import { BlogContext } from "context/BlogContext";
-
-import FormInput from "../FormInput";
+import { Form, Formik } from "formik";
 import { loginSchema } from "validators/userSchema";
 
+import FormInput from "../FormInput";
+
 const LoginForm = () => {
-  const { handleLogin,setModalForm } = useContext(BlogContext);
+  const { handleLogin, setModalForm } = useContext(BlogContext);
 
   return (
     <>

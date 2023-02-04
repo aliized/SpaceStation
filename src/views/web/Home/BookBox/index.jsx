@@ -1,9 +1,10 @@
-import book1 from "assets/images/dynamic/book1.webp";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+
 import LoadingBookBox from "components/Loading/home/LoadingBookBox";
 import { SERVER_URL } from "config";
 import { BlogContext } from "context/BlogContext";
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+
 const BookBox = () => {
   const { books, loading } = useContext(BlogContext);
   const book = books[0];

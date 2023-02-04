@@ -1,12 +1,13 @@
-import MainFrame from "components/containers/MainFrame";
-import MovieCard from "./MovieCard";
-
 import { useContext } from "react";
-import { BlogContext } from "context/BlogContext";
-import { Link } from "react-router-dom";
 import { IoChevronBackOutline } from "react-icons/io5";
-import MultiRenderer from "components/MultiRenderer";
+import { Link } from "react-router-dom";
+
 import LoadingMovieCard from "components/Loading/home/LoadingMovieCard";
+import MultiRenderer from "components/MultiRenderer";
+import MainFrame from "components/containers/MainFrame";
+import { BlogContext } from "context/BlogContext";
+
+import MovieCard from "./MovieCard";
 
 const MovieBox = () => {
   const { loading, movies } = useContext(BlogContext);

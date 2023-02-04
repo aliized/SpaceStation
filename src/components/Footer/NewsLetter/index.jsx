@@ -9,7 +9,10 @@ const NewsLetter = () => {
             <div className="text-2xl font-[900] leading-normal font-anjoman ">
               {" "}
               <p> اولین کسی باش </p>
-              <p className=" text-3xl md:text-4xl"> که از اخبار نجوم و فضا باخبر میشه</p>
+              <p className=" text-3xl md:text-4xl">
+                {" "}
+                که از اخبار نجوم و فضا باخبر میشه
+              </p>
             </div>
             <p>
               عضو خبرناممون شو تا هر روز برات جدیدترین اخبار و اطلاعات رو ایمیل

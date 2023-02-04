@@ -1,10 +1,11 @@
-import { BlogContext } from "context/BlogContext";
 import { useContext, useState } from "react";
+import { IoChevronDown, IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import MobileSubMenu from "./MobileSubMenu";
+
+import { BlogContext } from "context/BlogContext";
 
 import { navLinks } from "../MyLinks";
-import { IoChevronDown, IoClose } from "react-icons/io5";
+import MobileSubMenu from "./MobileSubMenu";
 
 const MobileLinks = () => {
   const { openNav, setOpenNav } = useContext(BlogContext);
@@ -13,7 +14,7 @@ const MobileLinks = () => {
 
   return (
     <>
-    <div
+      <div
         onClick={() => setOpenNav(false)}
         className={`${
           openNav

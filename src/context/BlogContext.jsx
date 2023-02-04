@@ -27,7 +27,6 @@ export const BlogContext = createContext({
   token: null,
   user: {},
   setUser: () => {},
-
 });
 //   setContacts: () => {},
 //   setFilteredContacts: () => {},

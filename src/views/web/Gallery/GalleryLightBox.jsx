@@ -1,8 +1,8 @@
-import Lightbox from "react-spring-lightbox";
-import { IoChevronBack, IoChevronForward, IoClose } from "react-icons/io5";
-import { FiDownload } from "react-icons/fi";
-
 import { useContext } from "react";
+import { FiDownload } from "react-icons/fi";
+import { IoChevronBack, IoChevronForward, IoClose } from "react-icons/io5";
+import Lightbox from "react-spring-lightbox";
+
 import { BlogContext } from "context/BlogContext";
 
 const GalleryLightBox = ({ setImageIndex, imageIndex, setOpen, isOpen }) => {

@@ -1,5 +1,3 @@
-import { SERVER_URL } from "config";
-import { BlogContext } from "context/BlogContext";
 import React, { useContext, useState } from "react";
 import {
   IoHome,
@@ -13,7 +11,10 @@ import {
   IoSettings,
   IoSettingsOutline,
 } from "react-icons/io5";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+
+import { SERVER_URL } from "config";
+import { BlogContext } from "context/BlogContext";
 
 const PanelSidebar = () => {
   const { user, logout } = useContext(BlogContext);
@@ -28,8 +29,7 @@ const PanelSidebar = () => {
   return (
     <div className="pt-10 pb-20 pl-2 w-60 font-medium font-anjoman ">
       <div className="px-5 py-4 flex flex-col items-center gap-2 border-b border-gray-800">
-        
-          {user.profilePic ? (
+        {user.profilePic ? (
           <>
             <img
               className="overflow-hidden rounded-full aspect-square w-20 h-20"
@@ -46,7 +46,7 @@ const PanelSidebar = () => {
             />
           </>
         )}
-        
+
         <p className="text-2xl font-bold ">{user.fullName}</p>
       </div>
       <div className="grid gap-2 py-2">

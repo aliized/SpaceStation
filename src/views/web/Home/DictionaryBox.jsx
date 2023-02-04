@@ -1,9 +1,10 @@
-import MainFrame from "components/containers/MainFrame";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { BlogContext } from "context/BlogContext";
+import { Link } from "react-router-dom";
+
 import LoadingPost from "components/Loading/blog/LoadingPost";
+import MainFrame from "components/containers/MainFrame";
 import { SERVER_URL } from "config";
+import { BlogContext } from "context/BlogContext";
 
 const DictionaryBox = () => {
   const { loading, blog } = useContext(BlogContext);
@@ -11,13 +12,15 @@ const DictionaryBox = () => {
 
   return (
     <MainFrame bgColor={"bg-black"}>
-      { !loading && post ? (
+      {!loading && post ? (
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 py-8">
-        <div className="rounded-large aspect-video overflow-hidden w-full">
-
-<img  src={`${SERVER_URL}/img/blog/${post.thumbnail}`}
-  alt={`تصویر ${post.title}`} className=" h-full w-full object-cover" />
-</div>
+          <div className="rounded-large aspect-video overflow-hidden w-full">
+            <img
+              src={`${SERVER_URL}/img/blog/${post.thumbnail}`}
+              alt={`تصویر ${post.title}`}
+              className=" h-full w-full object-cover"
+            />
+          </div>
           <h4 className="text-4xl font-bold font-anjoman"> {post.title} </h4>
           <div className="leading-7 ">
             <p>{post.body}...</p>

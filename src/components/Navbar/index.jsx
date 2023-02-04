@@ -1,12 +1,12 @@
 import { useContext } from "react";
+import { IoMenuOutline } from "react-icons/io5";
 
 import { BlogContext } from "context/BlogContext";
+
 import NavButtons from "./Buttons";
 import NavLogo from "./Logo";
 import DesktopLinks from "./NavLinks/Desktop";
 import MobileLinks from "./NavLinks/Mobile";
-
-import { IoMenuOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const { openNav, setOpenNav } = useContext(BlogContext);

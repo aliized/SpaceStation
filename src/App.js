@@ -1,23 +1,21 @@
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { useRoutes } from "react-router-dom";
 
-import { BlogContext } from "context/BlogContext";
-
-import Navbar from "components/Navbar";
 import Footer from "components/Footer";
 import RegisterLogin from "components/LoginModal";
+import Navbar from "components/Navbar";
+import ScrollToTop from "components/Scrollers/ScrollToTop";
+import { SERVER_URL } from "config";
+import { BlogContext } from "context/BlogContext";
+import routes from "routes";
 import {
   getAllPosts,
   getBooks,
   getGallery,
   getMovies,
 } from "services/web/blog";
-import ScrollToTop from "components/Scrollers/ScrollToTop";
 import { authApi, loginApi, registerApi } from "services/web/user";
-
-import { useRoutes } from "react-router-dom";
-import routes from "routes";
-import { SERVER_URL } from "config";
 
 function App() {
   //* Server Data States
@@ -45,7 +43,7 @@ function App() {
   const loginDataSet = (userInfo, userToken) => {
     //* user info
     setUser(userInfo);
-    
+
     setLoggedIn(true);
 
     //* user token
@@ -145,7 +143,7 @@ function App() {
     (async () => {
       try {
         const userToken = localStorage.getItem("user");
-        
+
         if (!userToken) {
           return logoutDataSet();
         }
@@ -157,7 +155,7 @@ function App() {
         const userInfo = res.data;
         loginDataSet(userInfo, userToken);
       } catch (err) {
-        if(err.response.status===401){
+        if (err.response.status === 401) {
           logoutDataSet();
         }
         console.log(err);

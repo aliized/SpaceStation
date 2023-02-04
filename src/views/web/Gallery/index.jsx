@@ -1,9 +1,11 @@
+import { useContext, useState } from "react";
 import Masonry from "react-masonry-css";
-import { useContext, useEffect, useState } from "react";
-import GalleryLightBox from "./GalleryLightBox";
-import { BlogContext } from "context/BlogContext";
-import { SERVER_URL } from "config";
+
 import LoadingGallery from "components/Loading/gallery/LoadingGallery";
+import { SERVER_URL } from "config";
+import { BlogContext } from "context/BlogContext";
+
+import GalleryLightBox from "./GalleryLightBox";
 
 const GalleryPage = () => {
   const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
@@ -15,7 +17,6 @@ const GalleryPage = () => {
     setIsLightBoxOpen(true);
     setLightBoxIndex(index);
   };
-
 
   //*my masonry Idea
   // const n = 5;
@@ -31,7 +32,6 @@ const GalleryPage = () => {
   //     }
   //   }
   // }, [gallery]);
-
 
   return (
     <>

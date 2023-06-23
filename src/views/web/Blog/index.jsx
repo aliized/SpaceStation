@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import LoadingPost from "components/Loading/blog/LoadingPost";
 import MultiRenderer from "components/MultiRenderer";
+import AnimateOnScroll from "components/aos/AnimateOnScroll";
 import { BlogContext } from "context/BlogContext";
 
 import PostBox from "./PostBox";
@@ -22,13 +23,15 @@ const Blog = () => {
       <div className="flex flex-col gap-10 py-8">
         {!loading && blogIndex.length ? (
           blogIndex.map((post) => (
-            <PostBox
-              key={post._id}
-              postTitle={post.title}
-              photo={post.thumbnail}
-              content={post.body}
-              postId={post._id}
-            />
+            <AnimateOnScroll>
+              <PostBox
+                key={post._id}
+                postTitle={post.title}
+                photo={post.thumbnail}
+                content={post.body}
+                postId={post._id}
+              />
+            </AnimateOnScroll>
           ))
         ) : (
           <MultiRenderer times={3}>

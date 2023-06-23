@@ -14,7 +14,9 @@ export const loginApi = (data) => {
 
 export const updateProfilePicApi = (token, data = null) => {
   console.log(data);
-  return api.post("/users/edit-profilepic", data, {
+  return api.post("/users/edit-profilepic"
+  , data
+  , {
     headers: { Authorization: `Bearer ${token}` },
   });
 };

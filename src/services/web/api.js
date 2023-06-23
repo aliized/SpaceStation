@@ -5,7 +5,7 @@ import { SERVER_URL } from "config";
 
 const api = axios.create({
   baseURL: SERVER_URL,
-  timeout: 10000,
+  // timeout: 10000,
   //baseURL:'https://api.safinefazayi.ir/'
 });
 

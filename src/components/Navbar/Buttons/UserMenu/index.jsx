@@ -12,15 +12,12 @@ const UserMenu = () => {
   // const [openUserMenu, setOpenUserMenu] = useState(false);
   return (
     <>
-      <div className="group/UserMenu relative">
-        <div
-          className="flex items-center  text-sm"
-          // onClick={() => setOpenUserMenu(true)}
-        >
+      <div className="group/UserMenu relative h-[34px]">
+        
           {user.profilePic ? (
             <>
               <img
-                className="overflow-hidden rounded-full aspect-square w-10 h-10"
+                className="overflow-hidden rounded-full aspect-square w-7 md:w-auto h-7 m-[2px]"
                 src={`${SERVER_URL}/img/users/${user.profilePic}`}
                 alt={user.fullname}
               />
@@ -28,13 +25,12 @@ const UserMenu = () => {
           ) : (
             <>
               <img
-                className="overflow-hidden rounded-full aspect-square w-10 h-10"
+                className="overflow-hidden rounded-full aspect-square w-7 h-7"
                 src={`${SERVER_URL}/img/users/defaultPic.webp`}
                 alt={user.fullname}
               />
             </>
           )}
-        </div>
         <DesktopUserMenu />
         {/* <MobileUserMenu openUserMenu={openUserMenu} setOpenUserMenu={setOpenUserMenu}/> */}
       </div>

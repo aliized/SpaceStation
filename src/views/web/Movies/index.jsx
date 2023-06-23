@@ -5,6 +5,7 @@ import MultiRenderer from "components/MultiRenderer";
 import { BlogContext } from "context/BlogContext";
 
 import MovieBox from "./MovieBox";
+import AnimateOnScroll from "components/aos/AnimateOnScroll";
 
 const Movies = () => {
   const { loading, movies } = useContext(BlogContext);
@@ -20,6 +21,8 @@ const Movies = () => {
       <div className="flex flex-col gap-10 py-10 bg-white">
         {!loading && movies.length ? (
           movies.map((movie) => (
+            <AnimateOnScroll>
+              
             <MovieBox
               key={movie._id}
               movieName={movie.name}
@@ -30,6 +33,7 @@ const Movies = () => {
               content={movie.body}
               movieId={movie._id}
             />
+            </AnimateOnScroll>
           ))
         ) : (
           <MultiRenderer times={3}>

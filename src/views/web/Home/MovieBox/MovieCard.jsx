@@ -11,17 +11,17 @@ const MovieCard = ({ movie }) => {
         />
       </div>
 
-      <div className=" flex flex-col gap-2 md:w-2/3 px-4">
-        <h3 className="text-2xl font-anjoman font-bold text-blue-700">
+      <div className=" flex flex-col gap-2 md:w-2/3 px-4 text-neutral-900">
+        <h3 className="text-2xl font-anjoman font-bold text-blue-700 pb-2">
           {" "}
           فیلم {movie.name}
         </h3>
-        <p className="font-bold text-gray-700">کارگردان: {movie.directors}</p>
-        <p className="font-bold text-gray-700">امتیاز: 8.4</p>
-        <p className="font-bold text-gray-700">نویسندگان: {movie.writers}</p>
-        <p className="font-bold text-gray-700">بازیگران: {movie.actors}</p>
-        <p className="font-bold text-gray-700">تاریخ انتشار: </p>
-        <p className="font-bold text-gray-700">{movie.body}</p>
+        <p>کارگردان: {movie.directors}</p>
+        <p>امتیاز: 8.4</p>
+        <p>نویسندگان: {movie.writers}</p>
+        <p>بازیگران: {movie.actors}</p>
+        <p>تاریخ انتشار: </p>
+        <p>{movie.body}</p>
       </div>
     </div>
   );

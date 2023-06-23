@@ -13,9 +13,9 @@ const Navbar = () => {
 
   return (
     <nav className=" text-black bg-black lg:text-white">
-      <div className="container flex items-center justify-between py-2 px-4 mx-auto  h-16">
+      <div className="container flex items-center justify-between py-2 px-4 mx-auto  h-16 ">
         <div
-          className="text-3xl text-white lg:hidden flex"
+          className="text-3xl text-white lg:hidden flex w-7"
           onClick={() => setOpenNav(!openNav)}
         >
           <IoMenuOutline />

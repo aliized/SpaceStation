@@ -5,6 +5,7 @@ import MultiRenderer from "components/MultiRenderer";
 import { BlogContext } from "context/BlogContext";
 
 import BookBox from "./BookBox";
+import AnimateOnScroll from "components/aos/AnimateOnScroll";
 
 const Books = () => {
   const { loading, books } = useContext(BlogContext);
@@ -19,14 +20,16 @@ const Books = () => {
       <div className="flex flex-col gap-10 py-10 bg-white">
         {!loading && books.length ? (
           books.map((book) => (
-            <BookBox
-              key={book._id}
-              bookName={book.name}
-              writer={book.writer}
-              photo={book.thumbnail}
-              content={book.body}
-              bookId={book._id}
-            />
+            <AnimateOnScroll>
+              <BookBox
+                key={book._id}
+                bookName={book.name}
+                writer={book.writer}
+                photo={book.thumbnail}
+                content={book.body}
+                bookId={book._id}
+              />
+            </AnimateOnScroll>
           ))
         ) : (
           <MultiRenderer times={3}>

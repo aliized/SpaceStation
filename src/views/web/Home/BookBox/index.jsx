@@ -11,16 +11,19 @@ const BookBox = () => {
 
   return (
     <div className="container pb-2 lg:pb-20 max-w-7xl px-5 mx-auto flex flex-col justify-center items-center gap-7 text-black ">
-      <h4 className="text-3xl font-bold md:text-4xl font-anjoman">
+      <h4 className="text-3xl font-bold md:text-4xl font-anjoman ">
         کتاب های نجومی
       </h4>
 
       {!loading && books.length ? (
         <>
-          <p className="text-2xl font-bold text-center">کتاب {book.name}</p>
           <div className=" flex flex-col-reverse lg:flex-row items-center lg:items-stretch ">
-            <div className="flex-1 flex flex-col gap-4 font-medium text-lg py-4 lg:px-8 leading-8 text-gray-700 justify-between ">
-              <div>{book.body}</div>
+            <div className="flex-1 flex flex-col py-4 gap-2 lg:px-8 leading-8 text-gray-700 ">
+         
+
+              <p className="text-xl font-bold">کتاب {book.name}</p>
+              <div className="text-zinc-800 line-clamp-6 lg:line-clamp-none">{book.body}</div>
+            
 
               <div className="flex justify-end">
                 <Link

@@ -162,6 +162,10 @@ const CommentBox = ({ postId }) => {
       cancelButtonColor: "#9a9a9a",
       confirmButtonText: "بله، حذفش کن",
       cancelButtonText: "لغو",
+      customClass: {
+        confirmButton: "font-vazir text-xl ",
+        cancelButton: "font-vazir text-xl  ",
+      },
     });
 
     if (result.isConfirmed) {
@@ -189,7 +193,10 @@ const CommentBox = ({ postId }) => {
 
   return (
     <>
-      <label htmlFor="message" className="text-right text-sm px-3 py-2">
+      <label
+        htmlFor="message"
+        className="text-right text-sm px-3 py-2 focus:outline-none"
+      >
         {numberOfComments ? (
           `${numberOfComments} نظر برای این مطلب ثبت شده. نظر تو چیه؟`
         ) : (
@@ -207,7 +214,7 @@ const CommentBox = ({ postId }) => {
           // handleCancel={}
         />
       ) : (
-        <div className=" py-3 md:py-5 flex gap-3 flex-col text-sm items-center">
+        <div className=" py-3 md:py-5 flex gap-3 flex-col text-sm items-center ">
           <p>لطفا برای ثبت نظر وارد حساب کاربریت شو یا ثبت‌نام کن</p>
 
           <button

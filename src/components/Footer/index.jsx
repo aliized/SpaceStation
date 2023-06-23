@@ -97,7 +97,7 @@ const Footer = () => {
           <p>
             تمامی حقوق متعلق به{" "}
             <a
-              href="https://www.linkedin.com/in/aliized"
+              href="https://www.yek.link/aliized"
               className="text-blue-500"
             >
               علی زارعی

@@ -14,15 +14,15 @@ const DictionaryBox = () => {
     <MainFrame bgColor={"bg-black"}>
       {!loading && post ? (
         <div className="max-w-5xl mx-auto flex flex-col items-center gap-6 lg:gap-14 py-8">
-          <div className="rounded-large aspect-video overflow-hidden w-full">
+          <div className="rounded-3xl md:rounded-large aspect-video overflow-hidden w-full">
             <img
               src={`${SERVER_URL}/img/blog/${post.thumbnail}`}
               alt={`تصویر ${post.title}`}
               className=" h-full w-full object-cover"
             />
           </div>
-          <h4 className="text-4xl font-bold font-anjoman"> {post.title} </h4>
-          <div className="leading-7 ">
+          <h4 className="text-xl  md:text-4xl font-bold font-anjoman"> {post.title} </h4>
+          <div className="leading-7  line-clamp-6 lg:line-clamp-none">
             <p>{post.body}...</p>
           </div>
           <div className="flex justify-end w-full">

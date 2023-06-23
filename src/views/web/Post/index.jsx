@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import Loading from "components/MultiRenderer";
+import LoadingPost from "components/Loading/blog/LoadingPost";
+import MultiRenderer from "components/MultiRenderer";
 import MainFrame from "components/containers/MainFrame";
 import { SERVER_URL } from "config";
 import { BlogContext } from "context/BlogContext";
@@ -61,7 +62,11 @@ const SinglePost = () => {
           </div>
         </MainFrame>
       ) : (
-        <Loading bgColor={"white"} />
+        <MultiRenderer containerClass={"w-full"}>
+          <MainFrame bgColor={"bg-white"}>
+            <LoadingPost />
+          </MainFrame>
+        </MultiRenderer>
       )}
     </div>
   );

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { useRoutes } from "react-router-dom";
+import { useLocation, useNavigate, useRoutes } from "react-router-dom";
 
 import Footer from "components/Footer";
-import RegisterLogin from "components/LoginModal";
+import RegisterOrLogin from "components/LoginModal";
 import Navbar from "components/Navbar";
 import ScrollToTop from "components/Scrollers/ScrollToTop";
 import { SERVER_URL } from "config";
@@ -38,11 +38,16 @@ function App() {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState({});
 
+  
   const router = useRoutes(routes);
+  const navigate = useNavigate();
+  const {pathname} = useLocation();
 
+  // Set the user token to the user object, so that it can be used later.
   const loginDataSet = (userInfo, userToken) => {
     //* user info
     setUser(userInfo);
+    
 
     setLoggedIn(true);
 
@@ -53,11 +58,15 @@ function App() {
     //  localStorage.setItem("user", JSON.stringify({ userToken }));
   };
 
+  // Logout and clear the token and user data set
   const logoutDataSet = () => {
     setToken(null);
     setUser({});
     setLoggedIn(false);
     localStorage.removeItem("user");
+    if(pathname.includes("/user")){
+      navigate("/");
+    }
   };
 
   const handleRegister = async (user) => {
@@ -97,10 +106,16 @@ function App() {
     }
   };
 
+  // Handles user login using the provided user object
   const handleLogin = async (user) => {
+    // Show loading toast while waiting for API response
     let loadingToast = toast.loading("لطفا چند لحظه صبر کن");
+
     try {
+      // Call the login API with the provided user object
       const res = await loginApi(user);
+
+      // Check the response status and show error toast if not successful
       if (res.status !== 200) {
         toast.error("مشکلی در ورود به حساب کاربری به وجود آمده!", {
           id: loadingToast,
@@ -108,18 +123,22 @@ function App() {
         });
       }
 
+      // Show success toast if login is successful
       toast.success("با موفقیت وارد حساب کاربریت شدی", {
         id: loadingToast,
         duration: 4000,
       });
 
-      //*set token + states
+      // Set token and user information to state
       const { user: userInfo, token: userToken } = res.data;
       loginDataSet(userInfo, userToken);
 
+      // Close the login modal
       setOpenModal(false);
     } catch (err) {
+      // Handle errors
       if (err.response) {
+        // Handle 404 error by showing register form and error toast
         if (err.response.status === 404) {
           toast.error("قبلا ثبت نام نکردی؟ لطفا ثبت نام کن", {
             id: loadingToast,
@@ -127,19 +146,63 @@ function App() {
           });
           setModalForm("register");
         } else {
+          // Show error toast with the error message
           toast.error(err.response.data.message, {
             id: loadingToast,
             duration: 4000,
           });
         }
       } else {
+        // Dismiss the loading toast if there is no response
         toast.dismiss(loadingToast);
       }
     }
   };
 
+  // // Login to the server and get the user info and token.
+  // const handleLogin = async (user) => {
+  //   let loadingToast = toast.loading("لطفا چند لحظه صبر کن");
+  //   try {
+  //     const res = await loginApi(user);
+  //     if (res.status !== 200) {
+  //       toast.error("مشکلی در ورود به حساب کاربری به وجود آمده!", {
+  //         id: loadingToast,
+  //         duration: 4000,
+  //       });
+  //     }
+
+  //     toast.success("با موفقیت وارد حساب کاربریت شدی", {
+  //       id: loadingToast,
+  //       duration: 4000,
+  //     });
+
+  //     //*set token + states
+  //     const { user: userInfo, token: userToken } = res.data;
+  //     loginDataSet(userInfo, userToken);
+
+  //     setOpenModal(false);
+  //   } catch (err) {
+  //     if (err.response) {
+  //       if (err.response.status === 404) {
+  //         toast.error("قبلا ثبت نام نکردی؟ لطفا ثبت نام کن", {
+  //           id: loadingToast,
+  //           duration: 4000,
+  //         });
+  //         setModalForm("register");
+  //       } else {
+  //         toast.error(err.response.data.message, {
+  //           id: loadingToast,
+  //           duration: 4000,
+  //         });
+  //       }
+  //     } else {
+  //       toast.dismiss(loadingToast);
+  //     }
+  //   }
+  // };
+
+  // Check if user is logged in already
   useEffect(() => {
-    //? auth check
     (async () => {
       try {
         const userToken = localStorage.getItem("user");
@@ -239,7 +302,7 @@ function App() {
           {router}
           <Footer />
         </div>
-        {openModal ? <RegisterLogin /> : null}
+        <RegisterOrLogin />
       </div>
     </BlogContext.Provider>
   );

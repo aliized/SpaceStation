@@ -6,6 +6,7 @@ import { SERVER_URL } from "config";
 import { BlogContext } from "context/BlogContext";
 
 import GalleryLightBox from "./GalleryLightBox";
+import AnimateOnScroll from "components/aos/AnimateOnScroll";
 
 const GalleryPage = () => {
   const [isLightBoxOpen, setIsLightBoxOpen] = useState(false);
@@ -35,7 +36,7 @@ const GalleryPage = () => {
 
   return (
     <>
-      <div className="flex justify-center py-10  text-3xl lg:text-6xl font-bold bg-opacity-30 font-anjoman">
+      <div className="flex justify-center pt-8 pb-5 md:py-10  text-3xl lg:text-6xl font-bold bg-opacity-30 font-anjoman">
         گالری تصاویر
       </div>
 
@@ -47,6 +48,8 @@ const GalleryPage = () => {
             columnClassName="x"
           >
             {gallery.map((img, index) => (
+              <AnimateOnScroll>
+              
               <div
                 key={index}
                 className="relative text-sm group min-h-[33vw] sm:min-h-[300px] hover:cursor-pointer mb-1 md:mb-2 flex flex-grow"
@@ -62,6 +65,7 @@ const GalleryPage = () => {
                   {img.caption}
                 </p>
               </div>
+            </AnimateOnScroll>
             ))}
           </Masonry>
         ) : (

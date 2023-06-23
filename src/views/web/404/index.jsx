@@ -1,4 +1,4 @@
-import { IoChevronForwardOutline } from "react-icons/io5";
+import { IoChevronBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 import NotFoundPic from "assets/images/NotFound.webp";
@@ -19,7 +19,7 @@ const NotFound = () => {
       <p>میخوای برگردی به صفحه ی اصلی؟</p>
       <Link to={`/`} className="flex items-center text-blue-400">
         صفحه ی اصلی
-        <IoChevronForwardOutline />
+        <IoChevronBackOutline />
       </Link>
     </div>
   );

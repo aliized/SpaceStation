@@ -12,18 +12,18 @@ import { BlogContext } from "context/BlogContext";
 const DesktopUserMenu = () => {
   const { logout, user } = useContext(BlogContext);
   return (
-    <div className="absolute hidden group-hover/UserMenu:block z-50 text-black shadow-md -left-3">
+    <div className="absolute hidden group-hover/UserMenu:block z-50 text-black shadow-md -left-4">
       {/* <div className="absolute hidden md:group-hover/UserMenu:block z-50 text-black shadow-md -left-3"> */}
       <div className="flex justify-end ml-4">
         <div className="text-white border-b-[1rem] border-x-[1rem] border-x-transparent border-solid border-white w-0 border-opacity-90"></div>
       </div>
 
       <div className=" bg-white bg-opacity-90 backdrop-blur-sm shadow-lg rounded-md text-sm flex flex-col w-56 overflow-hidden">
-        <div className="py-1 flex flex-col items-center px-8">
+        <div className="pb-2 pt-4 flex flex-col items-center px-8">
           {user.profilePic ? (
             <>
               <img
-                className="overflow-hidden rounded-full aspect-square w-20 h-20"
+                className="overflow-hidden rounded-full aspect-square w-16 h-16"
                 src={`${SERVER_URL}/img/users/${user.profilePic}`}
                 alt={user.fullname}
               />
@@ -31,7 +31,7 @@ const DesktopUserMenu = () => {
           ) : (
             <>
               <img
-                className="overflow-hidden rounded-full aspect-square w-20 h-20"
+                className="overflow-hidden rounded-full aspect-square w-16 h-16"
                 src={`${SERVER_URL}/img/users/defaultPic.webp`}
                 alt={user.fullname}
               />

@@ -26,7 +26,7 @@ const RegisterForm = () => {
           handleRegister(values);
         }}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, isSubmitting }) => (
           <Form className="flex flex-col gap-3 p-8 sm:mx-auto">
             <FormInput
               label="آدرس ایمیل"
@@ -56,6 +56,7 @@ const RegisterForm = () => {
             />
 
             <input
+              disabled={isSubmitting}
               className="px-5 py-2 mt-2 text-white bg-blue-700 rounded-full duration-75 cursor-pointer hover:bg-blue-800"
               type="submit"
               value="ثبت نام"

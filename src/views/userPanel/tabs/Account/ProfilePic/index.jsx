@@ -85,12 +85,12 @@ const ProfilePic = () => {
     }
   };
   return (
-    <div className="flex items-center gap-4 px-8 py-5 bg-gray-800 border-2 border-gray-800 bg-opacity-70 rounded-3xl">
+    <div className="flex items-center gap-4 px-2 md:px-8 py-5 bg-gray-800 border-2 border-gray-800 bg-opacity-70 rounded-3xl">
       <div>
         {user.profilePic ? (
           <>
             <img
-              className={` overflow-hidden rounded-full aspect-square w-28 h-28`}
+              className={` overflow-hidden rounded-full aspect-square h-16 w-16 md:w-28 md:h-28`}
               src={`${SERVER_URL}/img/users/${user.profilePic}`}
               alt={user.fullname}
             />
@@ -98,14 +98,14 @@ const ProfilePic = () => {
         ) : (
           <>
             <img
-              className="overflow-hidden rounded-full aspect-square w-28 h-28"
+              className="overflow-hidden rounded-full aspect-square h-16 w-16 md:w-28 md:h-28"
               src={`${SERVER_URL}/img/users/defaultPic.webp`}
               alt={user.fullname}
             />
           </>
         )}
       </div>
-      <div className="flex gap-3 flex-col justify-center text-sm">
+      <div className="flex flex-1 gap-3 flex-col justify-center text-sm">
         <div className="flex gap-3 ">
           <label htmlFor="newPic">
             <div className="py-1 px-2 text-gray-400 duration-150 border border-gray-400 rounded-md hover:bg-white hover:bg-opacity-10 hover:text-gray-200 hover:border-gray-200 hover:cursor-pointer">

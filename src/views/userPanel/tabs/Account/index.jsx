@@ -68,7 +68,7 @@ const Account = () => {
               }
             }}
           >
-            {({ errors }) => (
+            {({ errors ,isSubmitting}) => (
               <Form>
                 <div className="flex gap-3 text-sm">
                   <Field
@@ -77,7 +77,7 @@ const Account = () => {
                     name="fullName"
                     placeholder="نام شما"
                     className="px-2 py-1 bg-transparent border border-gray-400 rounded-md w-52"
-                  
+
                     autoFocus={true}
                   />
 
@@ -94,6 +94,8 @@ const Account = () => {
                   <input
                     className="px-2 py-1 text-white duration-75 bg-blue-700 rounded-md cursor-pointer  hover:bg-blue-600"
                     type="submit"
+                    disabled={isSubmitting}
+
                     value="ذخیره"
                   />
                 </div>
@@ -130,10 +132,7 @@ const Account = () => {
         )}
       </div>
 
-      <div className="px-8 py-5 bg-gray-800 border-2 border-gray-800 bg-opacity-70 rounded-3xl">
-        حذف حساب کاربری
-        <p className="p-3 text-red-600">به زودی...</p>
-      </div>
+      
     </div>
   );
 };

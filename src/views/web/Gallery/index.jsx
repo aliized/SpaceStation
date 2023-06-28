@@ -34,6 +34,28 @@ const GalleryPage = () => {
   //   }
   // }, [gallery]);
 
+
+
+<Masonry
+  breakpointCols={{ default: 5, 1280: 4, 768: 3 }}
+  className="flex gap-1 md:gap-2"
+  columnClassName="x"
+>
+  {gallery.map((img, index) => (
+
+      <img
+        className="object-cover min-w-full min-h-full"
+        src={`${SERVER_URL}/img/gallery/${img.photo}`}
+        alt={img.alt}
+      />
+
+  ))}
+</Masonry>
+
+
+
+
+
   return (
     <>
       <div className="flex justify-center pt-8 pb-5 md:py-10  text-3xl lg:text-6xl font-bold bg-opacity-30 font-anjoman">

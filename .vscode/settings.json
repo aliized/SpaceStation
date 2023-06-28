@@ -1,0 +1,6 @@
+{
+    "docwriter.style": "JSDoc",
+    "docify.commentService.sidePanelReviewMode": false,
+    "docify.commentService.programmingLanguage": "javascript",
+    "typescript.tsdk": "node_modules\\typescript\\lib"
+}

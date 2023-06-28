@@ -8,9 +8,32 @@ import { Link } from "react-router-dom";
 
 import { SERVER_URL } from "config";
 import { BlogContext } from "context/BlogContext";
+import Swal from "sweetalert2";
 
 const DesktopUserMenu = () => {
   const { logout, user } = useContext(BlogContext);
+  
+  const handleLogout = async () => {
+    const result = await Swal.fire({
+      title:
+        '<p class="font-anjoman font-bold text-xl">مطمئنی میخوای از اکانتت خارج بشی؟</p>',
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#9a9a9a",
+      confirmButtonText: "بله، خارج شو",
+      cancelButtonText: "لغو",
+      customClass: {
+        confirmButton: "font-vazir text-xl ",
+        cancelButton: "font-vazir text-xl  ",
+      },
+    });
+
+    if (result.isConfirmed) {
+      logout();
+    }
+  };
+
   return (
     <div className="absolute hidden group-hover/UserMenu:block z-50 text-black shadow-md -left-4">
       {/* <div className="absolute hidden md:group-hover/UserMenu:block z-50 text-black shadow-md -left-3"> */}
@@ -37,7 +60,10 @@ const DesktopUserMenu = () => {
               />
             </>
           )}
-          <Link className=" pt-1 px-8 text-xl font-bold font-anjoman" to="user/dashboard">
+          <Link
+            className=" pt-1 px-8 text-xl font-bold font-anjoman"
+            to="user/dashboard"
+          >
             {user.fullName}
           </Link>
         </div>
@@ -63,7 +89,7 @@ const DesktopUserMenu = () => {
 
           <button
             type="button"
-            onClick={logout}
+            onClick={handleLogout}
             className="border-t text-red-600 border-gray-300 duration-150 hover:bg-opacity-70 bg-red-200 bg-opacity-40 py-3 flex justify-center items-center gap-1"
           >
             <span className="text-lg">

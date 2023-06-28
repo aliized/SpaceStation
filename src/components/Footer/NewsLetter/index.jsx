@@ -27,6 +27,7 @@ const NewsLetter = () => {
                 className=" w-full sm:w-72 h-9 px-3 rounded-md text-black placeholder:text-right"
               />
               <input
+              
                 type="submit"
                 value=" عضویت"
                 className="w-full sm:w-24 h-9 rounded-md bg-gray-700 hover:bg-blue-700 hover:cursor-pointer duration-200"
